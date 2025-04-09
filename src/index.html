@@ -14,12 +14,56 @@
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
-    <!-- Loads the specified .html file -->
-    <main>
+    <header class="header">
       <div class="container">
-        <h2>App Work!!!</h2>
+        <nav class="header__nav">
+          <a href="./index.html">
+            <img src="images/logo-header.svg" alt="logo" />
+          </a>
+
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              Інтерактив <img src="./images/arrow-down.svg" alt="arrow-down" />
+              <ul class="header__nav-sublist">
+                <li class="header__nav-sublist--item">
+                  <button class="header__nav-sublist--btn" id="btnFilter">
+                    Числовий
+                  </button>
+                </li>
+                <li class="header__nav-sublist--item">
+                  <button class="header__nav-sublist--btn" id="btnFilter">
+                    Ігровий
+                  </button>
+                </li>
+                <li class="header__nav-sublist--item">
+                  <button class="header__nav-sublist--btn" id="btnFilter">
+                    Ознайомчий
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="#ourTeam">Наша команда</a>
+            </li>
+            <li class="header__nav-item"><a href="#contacts">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <ul class="header__user-panel">
+          <li class="header__user-panel--item">
+            <input type="checkbox" id="changeTheme" />
+            <label for="changeTheme"></label>
+          </li>
+          <li class="header__user-panel--item">
+            <span class="header__user-panel--item"
+              >Вітаємо, <span id="userName">User!</span></span
+            >
+          </li>
+        </ul>
       </div>
-    </main>
+    </header>
+    <!-- Loads the specified .html file -->
+    <main></main>
     <!-- <load ="partials/example.html" /> -->
     <script type="module" src="/main.js"></script>
   </body>
