@@ -12,16 +12,60 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/third-semester-team-project/assets/index-59e7af6d.js"></script>
-    <link rel="stylesheet" href="/third-semester-team-project/assets/index-54c5ab72.css">
+    <script type="module" crossorigin src="/third-semester-team-project/assets/index-27d55eaf.js"></script>
+    <link rel="stylesheet" href="/third-semester-team-project/assets/index-2daf7af4.css">
   </head>
   <body>
-    <!-- Loads the specified .html file -->
-    <main>
+    <header class="header">
       <div class="container">
-        <h2>App Work!!!</h2>
+        <nav class="header__nav">
+          <a href="./index.html">
+            <img src="/third-semester-team-project/assets/logo-header-35ae659c.svg" alt="logo" />
+          </a>
+
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              Інтерактив <img src="/third-semester-team-project/assets/arrow-down-b0162b36.svg" alt="arrow-down" />
+              <ul class="header__nav-sublist">
+                <li class="header__nav-sublist--item">
+                  <button class="header__nav-sublist--btn" id="btnFilter">
+                    Числовий
+                  </button>
+                </li>
+                <li class="header__nav-sublist--item">
+                  <button class="header__nav-sublist--btn" id="btnFilter">
+                    Ігровий
+                  </button>
+                </li>
+                <li class="header__nav-sublist--item">
+                  <button class="header__nav-sublist--btn" id="btnFilter">
+                    Ознайомчий
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="#ourTeam">Наша команда</a>
+            </li>
+            <li class="header__nav-item"><a href="#contacts">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <ul class="header__user-panel">
+          <li class="header__user-panel--item">
+            <input type="checkbox" id="changeTheme" />
+            <label for="changeTheme"></label>
+          </li>
+          <li class="header__user-panel--item">
+            <span class="header__user-panel--item"
+              >Вітаємо, <span id="userName">User!</span></span
+            >
+          </li>
+        </ul>
       </div>
-    </main>
+    </header>
+    <!-- Loads the specified .html file -->
+    <main></main>
     <!-- ENOENT: no such file or directory, open '/home/runner/work/third-semester-team-project/third-semester-team-project/src/partials/example.html' -->
     
   </body>
