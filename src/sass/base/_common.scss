@@ -1,5 +1,7 @@
 body {
   font-family: getFont('montserrat');
+  color: var(--secondary);
+  background: var(--primary);
 }
 main {
   background-image: url(../images/background.svg);
@@ -7,5 +9,5 @@ main {
   background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
-  background-color: getColor('background');
+  background-color: var(--background);
 }
