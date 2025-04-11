@@ -5,12 +5,15 @@ $colors: (
 body.light {
 	--primary: #ffffff;
 	--secondary: #000000;
-	--dark-gray: ##d7d7d7;
+	--dark-gray: #7a7a7a;
+	--gray: #d7d7d7;
 	--background: #eeeeee;
+	--hover: #f1f1f1;
 }
 
 body.dark {
 	--primary: #444444;
 	--secondary: #ffffff;
 	--background: #272727;
+	--hover: #252526;
 }
