@@ -1,17 +1,16 @@
 $colors: (
-  'primary': #ffffff,
+	'primary': #ffffff
 );
 
 body.light {
-  --primary: #ffffff;
-  --secondary: #000000;
-  --dark-gray: #d7dd7;
-  --background: #eeeeee;
+	--primary: #ffffff;
+	--secondary: #000000;
+	--dark-gray: ##d7d7d7;
+	--background: #eeeeee;
 }
 
 body.dark {
-  --primary: #000000;
-  --secondary: #ffffff;
-  --dark-gray: #d7dd7;
-  --background: #262626;
+	--primary: #444444;
+	--secondary: #ffffff;
+	--background: #272727;
 }
