@@ -1,9 +1,93 @@
 .header {
-  background: getColor('white');
-  > .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 0;
-  }
+	background: getColor('white');
+	> .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 22px 0;
+	}
+
+	&__nav {
+		display: flex;
+		gap: 81px;
+		align-items: center;
+		&-list {
+			display: flex;
+			gap: 50px;
+		}
+
+		&-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			> a {
+				font-size: 12px;
+				color: var(--secondary);
+				transition: 0.3s ease-in-out opacity;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+			&:first-child {
+				position: relative;
+				cursor: pointer;
+				font-size: 12px;
+				color: var(--secondary);
+
+				&:hover {
+					.header__nav-sublist {
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+		&-sublist {
+			visibility: hidden;
+			position: absolute;
+			background-color: var(--primary);
+			bottom: -103px;
+			left: 0;
+			border-width: 0 1px 1px 1px;
+			border-style: solid;
+			border-color: var(--secondary);
+			border-radius: 0 0 20px 20px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			width: 160px;
+
+			&--item {
+				width: 100%;
+			}
+
+			&--btn {
+				width: 100%;
+				text-align: center;
+				background-color: transparent;
+				border: none;
+				padding: 10px 0;
+				transition: 0.3s ease-in-out background-color;
+				font-size: 12px;
+				color: var(--secondary);
+
+				&:hover {
+					background-color: var(--hover);
+				}
+			}
+		}
+	}
+
+	&__user-panel {
+		display: flex;
+		align-items: center;
+		gap: 51px;
+
+		&--item {
+			font-size: 12px;
+		}
+	}
 }
