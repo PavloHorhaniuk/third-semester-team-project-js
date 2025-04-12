@@ -29,7 +29,6 @@ if (localStorage.getItem('StyleTheme')) {
 	if (Theme === themesNames.DARK) {
 		toggle()
 		changeTheme.checked = true
-		console.log(Theme)
 	} else {
 		changeTheme.checked = false
 	}
