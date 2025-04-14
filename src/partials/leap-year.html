@@ -2,25 +2,11 @@
 	<div class="container">
 		<h2 class="leap-year__title">Перевір в який рік ти народився</h2>
 		<div class="leap-year__wrapper">
-			<form class="leap-year__input-form">
-				<input
-					class="leap-year__input"
-					type="number"
-					name="year"
-					id="year"
-					min="0"
-					max="9999"
-					step="1"
-				/>
-				<button class="leap-year__btn">
-					<img src="./images/search.svg" alt="search" />
-				</button>
-			</form>
-
-			<span class="leap-year__result"
-				>Ведіть ваш рік народження, щоб перевірити чи народився в високосному
-				році</span
-			>
+      <input class="yearInput" type="number" id="yearInput" placeholder="Введіть рік народження">
+      <button class="yearButton" id="checkYear">
+        <img src="../images/search.svg" alt="search">
+      </button>
+      <p class="yearResult" id="result"></p>
 		</div>
 	</div>
 </section>
