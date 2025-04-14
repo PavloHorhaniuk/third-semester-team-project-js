@@ -51,4 +51,3 @@ document.querySelector('[data-action="="]').addEventListener('click' , function(
         calculatorResult.textContent = operation[currentAction] (Number(firstNumOfCalculator.value) , Number(secondNumOfCalculator.value))
     }
 })
-
