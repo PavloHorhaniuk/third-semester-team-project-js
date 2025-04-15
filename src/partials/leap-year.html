@@ -1,12 +1,15 @@
 <section class="leap-year">
-	<div class="container">
+	<div class="container container--year">
 		<h2 class="leap-year__title">Перевір в який рік ти народився</h2>
 		<div class="leap-year__wrapper">
-      <input class="yearInput" type="number" id="yearInput" placeholder="Введіть рік народження">
-      <button class="yearButton" id="checkYear">
-        <img src="../images/search.svg" alt="search">
-      </button>
-      <p class="yearResult" id="result"></p>
+			<form class="leap-year__input-form">
+				<input class="leap-year__input" id="year" placeholder="Введіть рік народження"/>
+				<button id="leap-year__btn" type="submit">
+					<img src="./images/search.svg" alt="search" />
+				</button>
+			</form>
+
+			<span id="leap-year__result">Введи свій рік народження у форму</span>
 		</div>
 	</div>
 </section>
