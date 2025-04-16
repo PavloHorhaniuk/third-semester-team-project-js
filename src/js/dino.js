@@ -1,7 +1,18 @@
+import dinoDead from '../images/dino/dino-dead.png'
+import dinoJump from '../images/dino/dino-jump.png'
+import dinoRun1 from '../images/dino/dino-run1.png'
+import dinoRun2 from '../images/dino/dino-run2.png'
+import dinoStand from '../images/dino/dino.png'
+
+import cactus1Src from '../images/dino/cactus1.png'
+import cactus2Src from '../images/dino/cactus2.png'
+import cactus3Src from '../images/dino/cactus3.png'
+
+import groundSrc from '../images/dino/track.png'
+
 const startGame = document.querySelector('.dino__btn')
 const result = document.querySelector('.dino__result')
 
-// board
 let board = document.getElementById('dino-board')
 let context = board.getContext('2d')
 let boardWidth = 700
@@ -9,7 +20,6 @@ let boardHeight = 200
 board.width = boardWidth
 board.height = boardHeight
 
-// dino
 let dinoWidth = 44
 let dinoHeight = 47
 let dinoX = 50
@@ -17,7 +27,6 @@ let dinoY = boardHeight - dinoHeight
 
 let dino
 
-// cactus
 let cactusArray = []
 
 let cactus1Width = 15
@@ -29,40 +38,37 @@ let cactusX = boardWidth
 let cactusY = boardHeight - cactusHeight
 
 let cactus1Img = new Image()
-cactus1Img.src = './images/dino/cactus1.png'
+cactus1Img.src = cactus1Src
 let cactus2Img = new Image()
-cactus2Img.src = './images/dino/cactus2.png'
+cactus2Img.src = cactus2Src
 let cactus3Img = new Image()
-cactus3Img.src = './images/dino/cactus3.png'
+cactus3Img.src = cactus3Src
 
-// physics
 let velocityX = -6
 let velocityY = 0
 let gravity = 0.4
 let groundY = boardHeight - dinoHeight
 
-// game state
 let score = 0
 let gameOver = false
 let cactusIntervalId = null
 
-// dino
-const dinoRun1 = new Image()
-dinoRun1.src = './images/dino/dino-run1.png'
-const dinoRun2 = new Image()
-dinoRun2.src = './images/dino/dino-run2.png'
-const dinoJump = new Image()
-dinoJump.src = './images/dino/dino-jump.png'
-const dinoDead = new Image()
-dinoDead.src = './images/dino/dino-dead.png'
-const dinoStand = new Image()
-dinoStand.src = './images/dino/dino.png'
+const dinoRun1Img = new Image()
+dinoRun1Img.src = dinoRun1
+const dinoRun2Img = new Image()
+dinoRun2Img.src = dinoRun2
+const dinoJumpImg = new Image()
+dinoJumpImg.src = dinoJump
+const dinoDeadImg = new Image()
+dinoDeadImg.src = dinoDead
+const dinoStandImg = new Image()
+dinoStandImg.src = dinoStand
 
 let groundX = 0
 let groundSpeed = 6
 
 const groundImg = new Image()
-groundImg.src = './images/dino/track.png'
+groundImg.src = groundSrc
 
 function initDino() {
 	dino = {
@@ -82,15 +88,15 @@ function drawDino(dino) {
 	let img
 
 	if (dino.isDead) {
-		img = dinoDead
+		img = dinoDeadImg
 	} else if (dino.isJumping) {
-		img = dinoJump
+		img = dinoJumpImg
 	} else if (dino.frame === 1) {
-		img = dinoRun1
+		img = dinoRun1Img
 	} else if (dino.frame === 2) {
-		img = dinoRun2
+		img = dinoRun2Img
 	} else {
-		img = dinoStand
+		img = dinoStandImg
 	}
 
 	context.drawImage(img, dino.x, dino.y, dino.width, dino.height)
@@ -168,7 +174,6 @@ function update() {
 
 	drawGround()
 
-	// Dino physics
 	velocityY += gravity
 	dino.y += velocityY
 
@@ -181,7 +186,6 @@ function update() {
 	dino.frame = score % 20 < 10 ? 1 : 2
 	drawDino(dino)
 
-	// Cactus logic
 	for (let i = 0; i < cactusArray.length; i++) {
 		let cactus = cactusArray[i]
 		cactus.x += velocityX
@@ -233,9 +237,7 @@ document.addEventListener('keydown', e => {
 window.onload = function () {
 	initDino()
 	context.clearRect(0, 0, board.width, board.height)
-
 	drawGround()
-
 	drawDino(dino)
 
 	result.textContent = 'Результат: 0'
