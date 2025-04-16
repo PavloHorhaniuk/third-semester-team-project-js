@@ -29,11 +29,11 @@ let cactusX = boardWidth
 let cactusY = boardHeight - cactusHeight
 
 let cactus1Img = new Image()
-cactus1Img.src = './images/dino/cactus1.png'
+cactus1Img.src = '../images/dino/cactus1.png'
 let cactus2Img = new Image()
-cactus2Img.src = './images/dino/cactus2.png'
+cactus2Img.src = '../images/dino/cactus2.png'
 let cactus3Img = new Image()
-cactus3Img.src = './images/dino/cactus3.png'
+cactus3Img.src = '../images/dino/cactus3.png'
 
 // physics
 let velocityX = -6
@@ -48,21 +48,21 @@ let cactusIntervalId = null
 
 // dino
 const dinoRun1 = new Image()
-dinoRun1.src = './images/dino/dino-run1.png'
+dinoRun1.src = '../images/dino/dino-run1.png'
 const dinoRun2 = new Image()
-dinoRun2.src = './images/dino/dino-run2.png'
+dinoRun2.src = '../images/dino/dino-run2.png'
 const dinoJump = new Image()
-dinoJump.src = './images/dino/dino-jump.png'
+dinoJump.src = '../images/dino/dino-jump.png'
 const dinoDead = new Image()
-dinoDead.src = './images/dino/dino-dead.png'
+dinoDead.src = '../images/dino/dino-dead.png'
 const dinoStand = new Image()
-dinoStand.src = './images/dino/dino.png'
+dinoStand.src = '../images/dino/dino.png'
 
 let groundX = 0
 let groundSpeed = 6
 
 const groundImg = new Image()
-groundImg.src = './images/dino/track.png'
+groundImg.src = '../images/dino/track.png'
 
 function initDino() {
 	dino = {
