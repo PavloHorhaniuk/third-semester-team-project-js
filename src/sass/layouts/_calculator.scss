@@ -1,0 +1,89 @@
+.calculator {
+	padding-top: 36px;
+	padding-bottom: 36px;
+
+	> .container {
+		width: 629px;
+	}
+	&__title {
+		font-family: map-get($fonts, 'montserrat'), sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--secondary);
+		display: flex;
+		justify-content: center;
+		margin-bottom: 49px;
+	}
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 38px;
+	}
+	&__input,
+	&__result {
+		border-radius: 20px;
+		padding: 10px 20px;
+		width: 135px;
+		height: 35px;
+		font-family: map-get($fonts, 'montserrat'), sans-serif;
+		font-weight: 400;
+		font-size: 10px;
+		color: var(--white-gray);
+		box-shadow: 3px 3px 0 0 #00000040;
+		background: var(--gray);
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+	&__action {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, auto);
+		gap: 10px;
+	}
+	&__btn {
+		border-radius: 20px;
+		padding: 5px 10px;
+		width: 27px;
+		height: 25px;
+		box-shadow: 3px 3px 0 0 #00000040;
+		background: var(--secondary);
+		font-family: map-get($fonts, 'montserrat'), sans-serif;
+		font-weight: 400;
+		font-size: 12px;
+		color: var(--primary);
+		transition: all 0.01s ease;
+	}
+	&__btn:active {
+		background-color: var(--primary);
+		color: var(--secondary);
+		transform: scale(0.8);
+	}
+	&__result {
+		width: 100%;
+		box-shadow: none;
+		white-space: nowrap;
+	}
+}
+.clicked {
+	background-color: var(--primary);
+	color: var(--secondary);
+	animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		background-color: var(--primary);
+	}
+	50% {
+		transform: scale(1.1);
+		background-color: var(--primary);
+	}
+	100% {
+		transform: scale(1);
+		background-color: var(--primary);
+	}
+}
