@@ -7,8 +7,7 @@ import dinoStand from '../images/dino/dino.png'
 import cactus1Src from '../images/dino/cactus1.png'
 import cactus2Src from '../images/dino/cactus2.png'
 import cactus3Src from '../images/dino/cactus3.png'
-
-import groundSrc from '../images/dino/track.png'
+import groundSrc from '../images/dino/ground.png'
 
 const startGame = document.querySelector('.dino__btn')
 const result = document.querySelector('.dino__result')
