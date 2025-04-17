@@ -1,9 +1,10 @@
 .calculator {
-	padding-top: 36px;
-	padding-bottom: 36px;
-
 	> .container {
-		width: 629px;
+		padding-top: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 	&__title {
 		font-family: map-get($fonts, 'montserrat'), sans-serif;
@@ -15,6 +16,7 @@
 		margin-bottom: 49px;
 	}
 	&__wrapper {
+		width: 629px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
