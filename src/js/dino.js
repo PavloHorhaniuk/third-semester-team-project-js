@@ -211,6 +211,24 @@ function update() {
 	result.textContent = `Результат: ${score}`
 }
 
+function handleKeydown(e) {
+	// Якщо гра закінчилась — нічого не робимо
+	if (gameOver) return
+
+	// Якщо користувач пише в інпут або textarea — не заважаємо
+	if (
+		document.activeElement.tagName === 'INPUT' ||
+		document.activeElement.tagName === 'TEXTAREA'
+	) {
+		return
+	}
+
+	if (e.code === 'Space') {
+		e.preventDefault()
+		moveDino(e)
+	}
+}
+
 function resetGame() {
 	score = 0
 	gameOver = false
@@ -222,15 +240,11 @@ function resetGame() {
 	context.clearRect(0, 0, board.width, board.height)
 	cactusIntervalId = setInterval(placeCactus, 1000)
 	requestAnimationFrame(update)
+	document.addEventListener('keydown', handleKeydown)
 }
 
 startGame.addEventListener('click', () => {
 	resetGame()
-})
-
-document.addEventListener('keydown', e => {
-	e.preventDefault()
-	moveDino(e)
 })
 
 window.onload = function () {
