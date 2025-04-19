@@ -6,6 +6,16 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+
+		&::after {
+			content: '';
+			background: var(--secondary);
+			width: 536px;
+			height: 1px;
+			border: 1px solid var(--secondary);
+			display: block;
+			margin: 0 auto;
+		}
 	}
 
 	&__title {
@@ -21,5 +31,6 @@
 		border-radius: 20px;
 		font-size: 12px;
 		padding: 10px 20px;
+		margin-bottom: 36px;
 	}
 }
