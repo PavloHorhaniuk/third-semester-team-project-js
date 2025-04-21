@@ -11,5 +11,8 @@
 	},
 	"prettier.arrowParens": "avoid",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.inlineSuggest.enabled": true
+	"editor.inlineSuggest.enabled": true,
+	"[scss]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	}
 }
