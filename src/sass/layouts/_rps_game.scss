@@ -1,46 +1,57 @@
-.rps-game{
-	> .container {
-    background: var(--primary);
-  }
-	&__title{
+.rps-game {
+	>.container {
+		padding-top: 36px;
+		background: var(--primary);
+	}
+
+	&__title {
 		font-weight: 400;
 		font-size: 16px;
 		text-align: center;
 		margin-bottom: 36px;
 	}
-	&__wrapper, &__choice{
+
+	&__wrapper,
+	&__choice {
 		position: relative;
 	}
-	&__choice-list{
+
+	&__choice-list {
 		display: flex;
-		align-items: center;		
+		align-items: center;
 		width: 256px;
 		justify-content: space-between;
 		margin: 0 auto;
 		margin-bottom: 36px;
 	}
-	&__choice--item{
+
+	&__choice--item {
 		background-color: black;
 		border-radius: 20px;
 		padding: 10px;
 	}
-	&__score{
+
+	&__score {
 		position: absolute;
 		top: 0;
 		right: 220px;
 	}
-	&__status, &__btn{
+
+	&__status,
+	&__btn {
 		display: block;
-		margin: 20px auto; 
+		margin: 20px auto;
 		text-align: center;
 		margin-bottom: 36px;
 	}
-	&__status{
+
+	&__status {
 		font-weight: 400;
 		font-size: 12px;
 		color: #039900;
 	}
-	&__btn{
+
+	&__btn {
 		border-radius: 20px;
 		padding: 10px 20px;
 		width: 182px;
@@ -51,12 +62,13 @@
 		font-size: 12px;
 		color: white
 	}
-	&__wrapper:after{
+
+	&__wrapper:after {
 		content: "";
 		display: block;
 		max-width: 536px;
 		height: 1px;
 		background-color: #000;
-		margin: 36px auto 0; 
+		margin: 36px auto 0;
 	}
 }

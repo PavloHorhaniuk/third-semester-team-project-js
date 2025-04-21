@@ -1,26 +1,25 @@
 .guess-number {
-    max-width: 1090px;
-    height: 163px;
-    padding-top: 36px;
-    padding-bottom: 36px;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-    padding-top: 36px;
-
-
-
     >.container {
-        max-width: 1090px;
         margin: 0 auto;
         background: var(--primary);
+        padding-top: 36px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        &::after {
+            content: '';
+            background: var(--secondary);
+            width: 536px;
+            height: 1px;
+            border: 1px solid var(--secondary);
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     &__title {
-        font-family: var(--montserrat);
         font-weight: 400;
         font-size: 16px;
         color: #000;
@@ -65,20 +64,9 @@
     }
 
     &__text {
-        font-family: var(--montserrat);
         font-weight: 400;
         font-size: 12px;
         text-align: right;
         color: #039900;
-    }
-
-    &::after {
-        content: '';
-        background: var(--secondary);
-        width: 536px;
-        height: 1px;
-        border: 1px solid var(--secondary);
-        display: block;
-        margin: 0 auto;
     }
 }
