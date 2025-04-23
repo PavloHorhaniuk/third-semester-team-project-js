@@ -34,6 +34,8 @@ document
 		firstNumOfCalculator.style.border = ''
 		firstNumOfCalculator.placeholder = 'Введіть число'
 		secondNumOfCalculator.placeholder = 'Введіть число'
+		firstNumOfCalculator.style.fontSize = '12px'
+		secondNumOfCalculator.style.fontSize = '12px'
 		let isValidNumber = value => {
 			const nonValid = /^-?\d+(\.\d+)?$/
 			return nonValid.test(value)
