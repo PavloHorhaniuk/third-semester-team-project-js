@@ -1,35 +1,51 @@
-.leap-year{
-  padding-top: 36px;
-  padding-bottom: 36px;
+.leap-year {
+  .container {
+    padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-.container--year{
-  width: 576px;
+
+.leap-year>.container::after {
+  content: "";
+  background: var(--secondary);
+  width: 536px;
+  height: 1px;
+  display: block;
 }
-.leap-year__title{
+
+.leap-year__title {
   font-weight: 400;
   font-size: 16px;
   text-align: center;
+  padding-bottom: 36px;
+}
+
+.leap-year__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 576px;
   margin-bottom: 36px;
 }
-.leap-year__wrapper{
-  display: flex;
-  justify-content: space-between;
-}
-.leap-year__input-form{
+
+.leap-year__input-form {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-
 }
-.leap-year__input{
+
+.leap-year__input {
   width: 180px;
   height: 35px;
   border-radius: 20px 0 0 20px;
   padding: 10px 10px 10px 10px;
   background-color: #D7D7D7;
 }
-#leap-year__btn{
+
+#leap-year__btn {
   width: 35px;
   height: 35px;
   border-radius: 0 20px 20px 0;
@@ -38,7 +54,8 @@
   align-items: center;
   justify-content: center;
 }
-#leap-year__result{
+
+#leap-year__result {
   display: flex;
   align-items: center;
   font-weight: 400;
