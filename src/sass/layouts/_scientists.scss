@@ -1,23 +1,20 @@
 .scientist {
-  padding-top: 36px;
-  padding-bottom: 36px;
-  // display: flex;
 
   .container {
-    text-align: center;
-    // padding: 22px 0;
+    padding-top: 36px;
+    padding-bottom: 36px;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
   }
 
 
   &__title {
+    font-weight: 400;
     font-size: 16px;
-    // display: block;
-    // text-align: center;
-    // align-items: center;
-    // margin-bottom: 36px;
     padding-bottom: 36px;
-
   }
 
   &__card-box {
@@ -25,11 +22,10 @@
     grid-template-columns: repeat(4, 100px);
     gap: 59px;
     row-gap: 36px;
-    justify-content: center;
     text-align: center;
-    // margin-top: 36px;
-    // margin-bottom: 30px;
-    // margin-left: 295px;
+    width: 577px;
+    margin-left: 257px;
+    margin-right: 256px;
   }
 
   &__card {
@@ -41,26 +37,14 @@
 
   &__buttons {
     flex-wrap: wrap;
-    gap: 20px;
-    row-gap: 36px;
-    // justify-content: center;
-
     display: grid;
     grid-template-columns: repeat(2, auto);
-    // justify-self: center;
-    // justify-content: center;
-    // text-align: right;
-
     column-gap: 36px;
     row-gap: 20px;
-    margin-top: 36px;
+   
 
     :nth-child(1) {
-      // display: flex;
-      // justify-content: center;
-      
       width: 227px;
-      // align-items: end;
     }
 
     :nth-child(2) {
