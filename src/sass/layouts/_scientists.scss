@@ -7,7 +7,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
   }
 
 
@@ -36,23 +35,29 @@
   }
 
   &__buttons {
-    flex-wrap: wrap;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    // grid-template-columns: repeat(2, auto);
+    grid-template-columns: max-content max-content;
     column-gap: 36px;
     row-gap: 20px;
-   
+    margin-left: 147px;
+    margin-right: 86px;
+    max-width: max-content;
+
 
     :nth-child(1) {
       width: 227px;
+      justify-self: end;
     }
 
     :nth-child(2) {
       width: 298px;
+      
     }
 
     :nth-child(3) {
       width: 282px;
+      justify-self: end;
     }
 
     :nth-child(4) {
@@ -65,10 +70,12 @@
 
     :nth-child(6) {
       width: 375px;
+      
     }
 
     :nth-child(7) {
       width: 329px;
+      justify-self: end;
     }
 
     :nth-child(8) {
