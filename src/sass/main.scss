@@ -4,12 +4,14 @@
 @import './utils/functions';
 @import './base/common';
 
+@import './components/backdrop';
 @import './components/container';
 @import './components/change-theme';
 @import './components/section';
 
 @import './layouts/guess-number';
 @import './layouts/leap-year';
+@import './layouts/footer-modal';
 @import './layouts/footer';
 @import './layouts/header';
 @import './layouts/hero';
@@ -19,5 +21,6 @@
 @import './layouts/dino';
 @import './layouts/_football';
 @import './layouts/time-calculator';
-@import './layouts/three-nums'; 
+@import './layouts/three-nums';
 // @import './layouts/scientists';
+@import './layouts/dino';

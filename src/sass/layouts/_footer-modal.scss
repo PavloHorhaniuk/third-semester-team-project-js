@@ -1,0 +1,75 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 463px;
+  height: 245px;
+  background-color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.button-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-title {
+  position: absolute;
+  top: 83px;
+  left: 138px;
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.modal-img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.modal-img:nth-of-type(1) {
+  top: 69px;
+  left: 43px;
+  // background: url(../images/sword.svg);
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: center;
+}
+
+.modal-img:nth-of-type(2) {
+  top: 69px;
+  left: 391px;
+  // background: url(../images/game-development.svg);
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: center;
+}
+
+.modal-img:nth-of-type(3) {
+  top: 145px;
+  left: 87px;
+  // background: url(../images/puzzle.svg);
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: center;
+}
+
+.modal-img:nth-of-type(4) {
+  top: 145px;
+  left: 347px;
+  // background: url(../images/tic-tac-toe.svg);
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  // background-position: center;
+}
