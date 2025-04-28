@@ -56,5 +56,3 @@ document.addEventListener('keydown', e => {
 		closeModal(currentModal)
 	}
 })
-
-openModal('header')
