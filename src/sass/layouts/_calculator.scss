@@ -1,11 +1,21 @@
 .calculator {
-	>.container {
+	> .container {
 		padding-top: 36px;
 		padding-bottom: 36px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		&::after {
+			content: '';
+			background: var(--secondary);
+			width: 536px;
+			height: 1px;
+			border: 1px solid var(--secondary);
+			display: block;
+			margin: 0 auto;
+			margin-top: 36px;
+		}
 	}
 
 	&__title {
@@ -25,17 +35,6 @@
 		align-items: center;
 		justify-content: center;
 		column-gap: 38px;
-
-		&::before {
-			content: '';
-			position: absolute;
-			display: block;
-			width: 100%;
-			max-width: 536px;
-			height: 1px;
-			background-color: var(--secondary);
-			margin-top: 125px;
-		}
 	}
 
 	&__input,
