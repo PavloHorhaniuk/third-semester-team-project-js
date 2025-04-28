@@ -12,14 +12,5 @@
 	},
 	"prettier.arrowParens": "avoid",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.inlineSuggest.enabled": true,
-	"[scss]": {
-		"editor.defaultFormatter": "vscode.css-language-features"
-	},
-	"[html]": {
-		"editor.defaultFormatter": "vscode.html-language-features"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	}
+	"editor.inlineSuggest.enabled": true
 }

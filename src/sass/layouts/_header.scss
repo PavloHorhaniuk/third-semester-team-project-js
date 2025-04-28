@@ -1,5 +1,6 @@
 .header {
 	background: getColor('white');
+
 	> .container {
 		display: flex;
 		align-items: center;
@@ -11,6 +12,7 @@
 		display: flex;
 		gap: 81px;
 		align-items: center;
+
 		&-list {
 			display: flex;
 			gap: 50px;
@@ -21,6 +23,7 @@
 			align-items: center;
 			justify-content: center;
 			gap: 8px;
+
 			> a {
 				font-size: 12px;
 				color: var(--secondary);
@@ -49,7 +52,7 @@
 			visibility: hidden;
 			position: absolute;
 			background-color: var(--primary);
-			bottom: -103px;
+			bottom: -137px;
 			left: 0;
 			border-width: 0 1px 1px 1px;
 			border-style: solid;
@@ -59,6 +62,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 160px;
+			z-index: 100;
 
 			&--item {
 				width: 100%;
