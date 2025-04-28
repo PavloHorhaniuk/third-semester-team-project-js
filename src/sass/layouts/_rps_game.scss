@@ -2,6 +2,7 @@
   >.container {
     padding-top: 36px;
     background: var(--primary);
+
     &::after {
       content: "";
       display: block;
@@ -33,9 +34,11 @@
     border-radius: 20px;
     padding: 10px;
   }
-  &__choice{
+
+  &__choice {
     position: relative;
   }
+
   &__score {
     font-weight: 400;
     font-size: 12px;
@@ -71,48 +74,55 @@
     color: white
   }
 }
-@media screen and (max-width: 768px){
+
+@media screen and (max-width: 768px) {
   .rps-game {
     >.container {
       padding-top: 36px;
       background: var(--primary);
       position: relative;
 
-      }  &__choice{
-        position: relative;
-        border: 1px dotted tomato;
-      }
-      &__score {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 170%;
-        position: absolute;
-        top: 33%;
-        right: 10%;
-      }
     }
+
+    &__choice {
+      position: relative;
+    }
+
+    &__score {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 170%;
+      position: absolute;
+      top: 33%;
+      right: 10%;
+    }
+  }
 }
-@media screen and (max-width: 480px){
+
+@media screen and (max-width: 480px) {
   .rps-game {
     >.container {
       padding-top: 36px;
       background: var(--primary);
       position: relative;
 
-      }  &__choice{
-        position: static;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      &__score {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 170%;
-        position: relative;
-        margin: 0 auto;
-        top: 0;
-        right: 0;
-      }
     }
+
+    &__choice {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__score {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 170%;
+      position: relative;
+      margin: 0 auto;
+      top: 0;
+      right: 0;
+    }
+  }
 }
