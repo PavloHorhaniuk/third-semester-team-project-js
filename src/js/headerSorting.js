@@ -4,7 +4,6 @@ const sections = document.querySelectorAll('section')
 const withoutFilter = () => {
 	sections.forEach(section => {
 		section.style.display = 'block'
-		console.log(section.style.display)
 	})
 }
 
