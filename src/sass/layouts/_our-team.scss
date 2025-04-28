@@ -1,0 +1,54 @@
+.our-team{
+	> .container {
+		padding-top: 36px;
+		text-align: center;
+    background: var(--primary);
+		&::after {
+			content: '';
+			background: var(--secondary);
+			width: 536px;
+			height: 1px;
+			border: 1px solid var(--secondary);
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	&__title {
+		font-size: 16px;
+		font-weight: 400;
+		text-align: center;
+		margin-bottom: 36px;
+	}
+	&__window{
+		width: 150px;
+		height: 150px;
+		border-radius: 20px;
+		background-color: #6a3a3a;
+		margin: 0 auto;
+	}
+	&__name{
+		margin: 20px 0 20px;
+	}
+	&__list{
+		display: flex;
+		overflow-x: auto;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: max-content;
+		height: 100%;
+	}
+	 img{
+		display: block;
+		max-width: 100%;
+		object-fit: cover;
+		width: 150px;
+		height: 100%;
+	 }
+}
+div.slider-box {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
