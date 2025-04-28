@@ -11,20 +11,17 @@
 					<img src="./images/arrow-down.svg" alt="arrow-down" />
 					<ul class="header__nav-sublist">
 						<li class="header__nav-sublist--item">
-							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="without-filter">
-								Без фільтру
-							</button>
-							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="numeral">
+							<button class="header__nav-sublist--btn" id="btnFilter">
 								Числовий
 							</button>
 						</li>
 						<li class="header__nav-sublist--item">
-							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="game">
+							<button class="header__nav-sublist--btn" id="btnFilter">
 								Ігровий
 							</button>
 						</li>
 						<li class="header__nav-sublist--item">
-							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="educational">
+							<button class="header__nav-sublist--btn" id="btnFilter">
 								Ознайомчий
 							</button>
 						</li>
@@ -41,8 +38,8 @@
 			<li class="header__user-panel--item change-theme">
 				<input type="checkbox" id="changeTheme" />
 				<label for="changeTheme">
-					<img src="./images/sun.svg" alt="sun" id='sun' />
-					<img src="./images/moon.svg" alt="moon" id='moon' />
+					<img src="./images/sun.svg" alt="sun" id='sun'/>
+					<img src="./images/moon.svg" alt="moon" id='moon'/>
 				</label>
 			</li>
 			<li class="header__user-panel--item">
@@ -50,4 +47,26 @@
 			</li>
 		</ul>
 	</div>
+	<div class="backdrop is-hidden" data-modal="header">
+		<div class="header__modal">
+			<button class="header__modal-close modal__btn-close" data-modal-close="header">
+				<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1L1 16" stroke="black" />
+				</svg>
+			</button>
+			<strong class='header__modal-title'>
+				Привіт! <br>
+				Ви потрапили на сайт інтерактивних ігор та завдань<br>
+				Надіємось, що вам сподобається і ви отримаєте позитивні емоції! <br>
+				Бажаємо Вам гарно провести час!
+			</strong>
+			<form class="header__modal-form">
+				<label for="header__modal-name" class='header__modal-label'>Введіть своє ім’я:</label>
+				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input'>
+				<button class='header__modal-form--btn'>Зберегти</button>
+			</form>
+		</div>
+	</div>
 </header>
+
+
