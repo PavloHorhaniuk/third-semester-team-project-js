@@ -1,16 +1,40 @@
 .leap-year {
   .container {
     padding-top: 36px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    @media screen and (min-width: getBreakpoint('md')) {
+      width: 480px;
+    }
+    @media screen and (min-width: getBreakpoint('lg')) {
+      width: 768px;
+    }
+    @media screen and (min-width: getBreakpoint('xl')) {
+      width: 1090px;
+    }
+
     &::after {
       content: "";
       background: var(--secondary);
-      width: 536px;
+      width: 150px;
       height: 1px;
       display: block;
+
+      @media screen and (min-width: getBreakpoint('md')) {
+        width: 240px;
+      }
+      @media screen and (min-width: getBreakpoint('lg')) {
+        width: 330px;
+      }
+      @media screen and (min-width: getBreakpoint('lg')) {
+        width: 420px;
+      }
+      @media screen and (min-width: getBreakpoint('xl')) {
+        width: 536px;
+      }
     }
 
     .leap-year__title {
@@ -22,16 +46,23 @@
 
     .leap-year__wrapper {
       display: flex;
+      flex-direction: column;
+      gap: 20px;
       align-items: center;
       justify-content: space-between;
       width: 576px;
       margin-bottom: 36px;
+
+      @media screen and (min-width: getBreakpoint('lg')) {
+        flex-direction: row;
+      }
     
       .leap-year__input-form {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        
   
         .leap-year__input {
           width: 180px;
