@@ -5,10 +5,10 @@
 
     &::after {
       content: "";
-      display: block;
-      max-width: 536px;
+      background: var(--secondary);
+      width: 536px;
       height: 1px;
-      border: 1px solid var(--secondary);
+      display: block;
       margin: 36px auto 0;
     }
   }
