@@ -1,17 +1,10 @@
-.our-team{
+.our-team {
 	> .container {
 		padding-top: 36px;
 		text-align: center;
-    background: var(--primary);
-		&::after {
-			content: '';
-			background: var(--secondary);
-			width: 536px;
-			height: 1px;
-			border: 1px solid var(--secondary);
-			display: block;
-			margin: 0 auto;
-		}
+		background: var(--primary);
+
+		@include sectionLine;
 	}
 	&__title {
 		font-size: 16px;
@@ -19,17 +12,17 @@
 		text-align: center;
 		margin-bottom: 36px;
 	}
-	&__window{
+	&__window {
 		width: 150px;
 		height: 150px;
 		border-radius: 20px;
 		background-color: #6a3a3a;
 		margin: 0 auto;
 	}
-	&__name{
+	&__name {
 		margin: 20px 0 20px;
 	}
-	&__list{
+	&__list {
 		display: flex;
 		overflow-x: auto;
 		position: absolute;
@@ -39,16 +32,16 @@
 		height: 100%;
 		transition: left 0.3s ease;
 	}
-	 &__image{
+	&__image {
 		display: block;
 		max-width: 100%;
 		object-fit: cover;
 		width: 150px;
 		height: 100%;
-	 }
-	 &__container{
+	}
+	&__container {
 		display: flex;
-	 }
+	}
 }
 div.slider-box {
 	position: relative;

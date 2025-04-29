@@ -1,0 +1,26 @@
+@mixin sectionLine {
+	&::after {
+		content: '';
+		background: var(--secondary);
+		width: 536px;
+		height: 1px;
+		display: block;
+		margin: 36px auto 0;
+
+		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+			width: 469px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+			width: 335px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+			width: 201px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
+			width: 134px;
+		}
+	}
+}

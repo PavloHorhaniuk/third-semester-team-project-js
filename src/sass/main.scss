@@ -1,15 +1,23 @@
+// reset
 @import './base/reset';
+
+// utils
 @import './utils/breakpoints';
 @import './utils/fonts';
 @import './utils/variables';
 @import './utils/functions';
+@import './utils/mixins';
+
+//base
 @import './base/common';
 
+// components
 @import './components/backdrop';
 @import './components/container';
 @import './components/change-theme';
 @import './components/section';
 
+// layouts
 @import './layouts/guess-number';
 @import './layouts/leap-year';
 @import './layouts/footer-modal';
@@ -24,5 +32,4 @@
 @import './layouts/time-calculator';
 @import './layouts/three-nums';
 @import './layouts/our-team';
-// @import './layouts/scientists';
 @import './layouts/dino';
