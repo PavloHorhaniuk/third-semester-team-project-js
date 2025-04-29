@@ -6,6 +6,10 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 22px 0;
+
+		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+			padding: 17px 0;
+		}
 	}
 
 	&__nav {
@@ -13,9 +17,22 @@
 		gap: 81px;
 		align-items: center;
 
+		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+			gap: 50px;
+		}
+
 		&-list {
 			display: flex;
 			gap: 50px;
+
+			@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+				gap: 20px;
+			}
+
+			@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+				visibility: hidden;
+				display: none;
+			}
 		}
 
 		&-item {
@@ -64,6 +81,10 @@
 			width: 160px;
 			z-index: 100;
 
+			@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+				width: 140px;
+			}
+
 			&--item {
 				width: 100%;
 			}
@@ -90,6 +111,18 @@
 		align-items: center;
 		gap: 51px;
 
+		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+			gap: 35px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+			gap: 27px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+			gap: 20px;
+		}
+
 		&--item {
 			font-size: 12px;
 
@@ -112,10 +145,8 @@
 			bottom: -35px;
 			background: var(--primary);
 			left: 0;
-			border-width: 0 1px 1px 1px;
-			border-style: solid;
-			border-color: var(--secondary);
-			border-radius: 0 0 20px 20px;
+			border: 1px solid var(--secondary);
+			border-radius: 20px;
 			overflow: hidden;
 			display: flex;
 			flex-direction: column;
@@ -171,6 +202,7 @@
 			cursor: pointer;
 			transition: 0.3s ease-in-out transform;
 			padding: 5px;
+			z-index: 2;
 
 			&:hover,
 			&:focus {

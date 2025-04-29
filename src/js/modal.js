@@ -1,6 +1,6 @@
 const backdrop = document.querySelectorAll('[data-modal]')
-const btnClose = document.querySelectorAll('[data-modal-close]')
 const btnOpen = document.querySelectorAll('[data-modal-open]')
+const btnClose = document.querySelectorAll('[data-modal-close]')
 
 // btn.dataset.modalClose
 export function openModal(data) {
@@ -13,12 +13,10 @@ export function openModal(data) {
 }
 export function closeModal(data) {
 	backdrop.forEach(el => {
-		if (data == 'footer') {
+		if (data == el.dataset.modal) {
 			el.classList.add('is-hidden')
-		} else if (data == 'header') {
-			el.classList.add('is-hidden')
+			document.body.classList.remove('no-scroll')
 		}
-		document.body.classList.remove('no-scroll')
 	})
 }
 

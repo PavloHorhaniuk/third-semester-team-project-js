@@ -7,19 +7,13 @@
 		align-items: center;
 		flex-direction: column;
 
-		&::after {
-			content: '';
-			background: var(--secondary);
-			width: 536px;
-			height: 1px;
-			border: 1px solid var(--secondary);
-			display: block;
-			margin: 0 auto;
-		}
+		@include sectionLine;
 	}
 
 	&__title {
 		margin-bottom: 36px;
+		font-size: 16px;
+		font-weight: 400;
 	}
 
 	&__btn {
