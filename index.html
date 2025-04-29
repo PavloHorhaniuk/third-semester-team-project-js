@@ -12,8 +12,8 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/third-semester-team-project/assets/index-08614205.js"></script>
-		<link rel="stylesheet" href="/third-semester-team-project/assets/index-d541d3af.css">
+		<script type="module" crossorigin src="/third-semester-team-project/assets/index-8eef1ad7.js"></script>
+		<link rel="stylesheet" href="/third-semester-team-project/assets/index-8cdc9373.css">
 	</head>
 
 	<body class="light">
@@ -65,7 +65,10 @@
 				</label>
 			</li>
 			<li class="header__user-panel--item">
-				Вітаємо, <span id="userName">User!</span></span>
+				Вітаємо, <span id="userName">User</span>!</span>
+				<ul class='header__user-panel--sublist'>
+					<li><button id='logout'>Вийти</button></li>
+				</ul>
 			</li>
 		</ul>
 	</div>
@@ -84,9 +87,15 @@
 			</strong>
 			<form class="header__modal-form">
 				<label for="header__modal-name" class='header__modal-label'>Введіть своє ім’я:</label>
-				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input'>
+				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName'>
 				<button class='header__modal-form--btn'>Зберегти</button>
 			</form>
+			<div class="header__modal-images">
+				<img src="/third-semester-team-project/assets/sword-fa141715.svg" alt="sworld" />
+				<img src="/third-semester-team-project/assets/puzzle-f7db1c80.svg" alt="puzzle" />
+				<img src="/third-semester-team-project/assets/game-development2-a70ad7d8.svg" alt="game-development" />
+				<img src="/third-semester-team-project/assets/tic-tac-toe-300ec219.svg" alt="tic-tac-toe" />
+			</div>
 		</div>
 	</div>
 </header>
@@ -401,7 +410,5 @@
 		<!-- <script type="module" src="./js/footer-modal.js" defer></script> -->
 		
 		
-		<!--! цей скрипт якій запитується у користувача його імя він зараз в коменті, бо немає модального вікна -->
-		<!-- <script type="module" src="./js/login.js" defer></script> -->
 	</body>
 </html>
