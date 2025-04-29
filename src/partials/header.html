@@ -46,7 +46,10 @@
 				</label>
 			</li>
 			<li class="header__user-panel--item">
-				Вітаємо, <span id="userName">User!</span></span>
+				Вітаємо, <span id="userName">User</span>!</span>
+				<ul class='header__user-panel--sublist'>
+					<li><button id='logout'>Вийти</button></li>
+				</ul>
 			</li>
 		</ul>
 	</div>
@@ -65,9 +68,15 @@
 			</strong>
 			<form class="header__modal-form">
 				<label for="header__modal-name" class='header__modal-label'>Введіть своє ім’я:</label>
-				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input'>
+				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName'>
 				<button class='header__modal-form--btn'>Зберегти</button>
 			</form>
+			<div class="header__modal-images">
+				<img src="./images/sword.svg" alt="sworld" />
+				<img src="./images/puzzle.svg" alt="puzzle" />
+				<img src="./images/game-development2.svg" alt="game-development" />
+				<img src="./images/tic-tac-toe.svg" alt="tic-tac-toe" />
+			</div>
 		</div>
 	</div>
 </header>
