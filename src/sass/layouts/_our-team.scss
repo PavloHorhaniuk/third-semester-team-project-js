@@ -30,7 +30,7 @@
 		top: 0;
 		width: max-content;
 		height: 100%;
-		transition: left 0.3s ease;
+		// transition: left 0.3s ease;
 	}
 	&__image {
 		display: block;
@@ -42,10 +42,36 @@
 	&__container {
 		display: flex;
 	}
+	&__arrright{
+		margin-right: 92px;
+	}
+	&__arrleft{
+		margin-left: 92px;
+	}
 }
 div.slider-box {
 	position: relative;
 	width: 150px;
 	height: 150px;
 	overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+	.our-team {
+		&__arrright{
+			margin-right: 32px;
+		}
+		&__arrleft{
+			margin-left: 32px;
+		}
+	}
+}
+@media screen and (max-width: 480px) {
+	.our-team {
+		&__arrright{
+			margin-right: 0;
+		}
+		&__arrleft{
+			margin-left: 0;
+		}
+	}
 }
