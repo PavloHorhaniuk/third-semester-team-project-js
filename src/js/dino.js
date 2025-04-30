@@ -1,3 +1,5 @@
+// Адаптивна версія гри Dino з фіксованими розмірами полотна
+
 import dinoDead from '../images/dino/dino-dead.png'
 import dinoJump from '../images/dino/dino-jump.png'
 import dinoRun1 from '../images/dino/dino-run1.png'
@@ -14,25 +16,50 @@ const result = document.querySelector('.dino__result')
 
 let board = document.getElementById('dino-board')
 let context = board.getContext('2d')
-let boardWidth = 700
-let boardHeight = 200
-board.width = boardWidth
-board.height = boardHeight
 
-let dinoWidth = 44
-let dinoHeight = 47
-let dinoX = 50
+let boardWidth, boardHeight, scale
+function setBoardSize() {
+	const w = window.innerWidth
+	if (w >= 1090) {
+		boardWidth = 700
+		boardHeight = 200
+	} else if (w >= 768) {
+		boardWidth = 600
+		boardHeight = 180
+	} else if (w >= 480) {
+		boardWidth = 380
+		boardHeight = 140
+	} else {
+		boardWidth = 240
+		boardHeight = 100
+	}
+	scale = boardWidth / 700
+	board.width = boardWidth
+	board.height = boardHeight
+}
+setBoardSize()
+
+window.addEventListener('resize', () => {
+	setBoardSize()
+	initDino()
+	context.clearRect(0, 0, board.width, board.height)
+	drawGround()
+	drawDino(dino)
+})
+
+let dinoWidth = 44 * scale
+let dinoHeight = 47 * scale
+let dinoX = 50 * scale
 let dinoY = boardHeight - dinoHeight
 
 let dino
 
 let cactusArray = []
 
-let cactus1Width = 15
-let cactus2Width = 35
-let cactus3Width = 50
-
-let cactusHeight = 35
+let cactus1Width = 15 * scale
+let cactus2Width = 35 * scale
+let cactus3Width = 50 * scale
+let cactusHeight = 35 * scale
 let cactusX = boardWidth
 let cactusY = boardHeight - cactusHeight
 
@@ -43,9 +70,9 @@ cactus2Img.src = cactus2Src
 let cactus3Img = new Image()
 cactus3Img.src = cactus3Src
 
-let velocityX = -6
+let velocityX = -6 * scale
 let velocityY = 0
-let gravity = 0.4
+let gravity = 0.4 * scale
 let groundY = boardHeight - dinoHeight
 
 let score = 0
@@ -64,12 +91,20 @@ const dinoStandImg = new Image()
 dinoStandImg.src = dinoStand
 
 let groundX = 0
-let groundSpeed = 6
+let groundSpeed = 6 * scale
 
 const groundImg = new Image()
 groundImg.src = groundSrc
 
 function initDino() {
+	dinoWidth = 44 * scale
+	dinoHeight = 47 * scale
+	dinoX = 50 * scale
+	dinoY = boardHeight - dinoHeight
+	groundY = boardHeight - dinoHeight
+	cactusX = boardWidth
+	cactusY = boardHeight - cactusHeight
+
 	dino = {
 		x: dinoX,
 		y: groundY,
@@ -103,7 +138,7 @@ function drawDino(dino) {
 
 function moveDino(e) {
 	if (e.code === 'Space' && !dino.isJumping && !gameOver) {
-		velocityY = -10
+		velocityY = -10 * scale
 		dino.isJumping = true
 	}
 }
@@ -111,21 +146,20 @@ function moveDino(e) {
 function placeCactus() {
 	let cactus = {
 		img: null,
-		x: cactusX,
-		y: cactusY,
+		x: boardWidth,
+		y: boardHeight - cactusHeight,
 		width: null,
 		height: cactusHeight
 	}
 
-	let placeCactusChance = Math.random()
-
-	if (placeCactusChance > 0.9) {
+	let chance = Math.random()
+	if (chance > 0.9) {
 		cactus.img = cactus3Img
 		cactus.width = cactus3Width
-	} else if (placeCactusChance > 0.7) {
+	} else if (chance > 0.7) {
 		cactus.img = cactus2Img
 		cactus.width = cactus2Width
-	} else if (placeCactusChance > 0.3) {
+	} else if (chance > 0.3) {
 		cactus.img = cactus1Img
 		cactus.width = cactus1Width
 	} else {
@@ -133,10 +167,7 @@ function placeCactus() {
 	}
 
 	cactusArray.push(cactus)
-
-	if (cactusArray.length > 5) {
-		cactusArray.shift()
-	}
+	if (cactusArray.length > 5) cactusArray.shift()
 }
 
 function detectCollision(dino, cactus) {
@@ -149,33 +180,33 @@ function detectCollision(dino, cactus) {
 }
 
 function drawGround() {
+	let groundHeight = 20 * scale
 	groundX -= groundSpeed
-
-	if (groundX <= -boardWidth) {
-		groundX = 0
-	}
-
-	context.drawImage(groundImg, groundX, boardHeight - 20, boardWidth, 20)
+	if (groundX <= -boardWidth) groundX = 0
+	context.drawImage(
+		groundImg,
+		groundX,
+		boardHeight - groundHeight,
+		boardWidth,
+		groundHeight
+	)
 	context.drawImage(
 		groundImg,
 		groundX + boardWidth,
-		boardHeight - 20,
+		boardHeight - groundHeight,
 		boardWidth,
-		20
+		groundHeight
 	)
 }
 
 function update() {
 	if (gameOver) return
-
 	requestAnimationFrame(update)
 	context.clearRect(0, 0, board.width, board.height)
-
 	drawGround()
 
 	velocityY += gravity
 	dino.y += velocityY
-
 	if (dino.y > groundY) {
 		dino.y = groundY
 		velocityY = 0
@@ -185,8 +216,7 @@ function update() {
 	dino.frame = score % 20 < 10 ? 1 : 2
 	drawDino(dino)
 
-	for (let i = 0; i < cactusArray.length; i++) {
-		let cactus = cactusArray[i]
+	for (let cactus of cactusArray) {
 		cactus.x += velocityX
 		context.drawImage(
 			cactus.img,
@@ -195,7 +225,6 @@ function update() {
 			cactus.width,
 			cactus.height
 		)
-
 		if (detectCollision(dino, cactus)) {
 			gameOver = true
 			dino.isDead = true
@@ -212,17 +241,8 @@ function update() {
 }
 
 function handleKeydown(e) {
-	// Якщо гра закінчилась — нічого не робимо
 	if (gameOver) return
-
-	// Якщо користувач пише в інпут або textarea — не заважаємо
-	if (
-		document.activeElement.tagName === 'INPUT' ||
-		document.activeElement.tagName === 'TEXTAREA'
-	) {
-		return
-	}
-
+	if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return
 	if (e.code === 'Space') {
 		e.preventDefault()
 		moveDino(e)
@@ -243,15 +263,17 @@ function resetGame() {
 	document.addEventListener('keydown', handleKeydown)
 }
 
-startGame.addEventListener('click', () => {
-	resetGame()
+startGame.addEventListener('click', resetGame)
+
+window.addEventListener('resize', () => {
+	setBoardSize()
+	initDino()
 })
 
-window.onload = function () {
+window.onload = () => {
 	initDino()
 	context.clearRect(0, 0, board.width, board.height)
 	drawGround()
 	drawDino(dino)
-
 	result.textContent = 'Результат: 0'
 }

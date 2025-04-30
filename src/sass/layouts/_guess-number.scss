@@ -8,14 +8,7 @@
 		justify-content: center;
 		flex-direction: column;
 
-		&::after {
-			content: '';
-			width: 536px;
-			height: 1px;
-			border: 1px solid var(--secondary);
-			display: block;
-			margin: 0 auto;
-		}
+		@include sectionLine;
 	}
 
 	&__title {
