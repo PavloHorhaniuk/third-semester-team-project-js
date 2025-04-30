@@ -69,6 +69,18 @@
 	}
 }
 
+@media screen and (max-width: 1090px) {
+	.rps-game {
+		&__score {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 170%;
+			position: absolute;
+			right: 10%;
+		}
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.rps-game {
 		> .container {
@@ -86,7 +98,7 @@
 			font-size: 12px;
 			line-height: 170%;
 			position: absolute;
-			top: 33%;
+			top: 40%;
 			right: 10%;
 		}
 	}

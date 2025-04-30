@@ -6,31 +6,38 @@
 
 		@include sectionLine;
 	}
+
 	&__title {
 		font-size: 16px;
 		font-weight: 400;
 		text-align: center;
 		margin-bottom: 36px;
 	}
+
 	&__window {
 		width: 150px;
 		height: 150px;
 		border-radius: 20px;
-		background-color: #6a3a3a;
 		margin: 0 auto;
 	}
+
 	&__name {
 		margin: 20px 0 20px;
 	}
+
 	&__list {
 		display: flex;
 		overflow-x: auto;
-		position: absolute;
-		left: 0;
-		top: 0;
 		width: max-content;
 		height: 100%;
-		transition: left 0.3s ease;
+		gap: 30px;
+	}
+
+	&__item {
+		transform: translateX(0);
+		transition: 0.3s ease-in-out transform;
+		border-radius: 20px;
+		overflow: hidden;
 	}
 	&__image {
 		display: block;
@@ -39,8 +46,40 @@
 		width: 150px;
 		height: 100%;
 	}
+
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 6px;
+		margin-top: 24px;
+
+		&-item {
+			> button {
+				width: 18px;
+				height: 3px;
+				background-color: var(--white-gray);
+				border-radius: 3px;
+				transition: 0.3s ease-in-out width;
+
+				&.active {
+					background-color: var(--swiper-active);
+					width: 30px;
+				}
+			}
+		}
+	}
+
 	&__container {
 		display: flex;
+	}
+
+	&__arrright {
+		margin-right: 92px;
+	}
+
+	&__arrleft {
+		margin-left: 92px;
 	}
 }
 div.slider-box {
@@ -48,4 +87,26 @@ div.slider-box {
 	width: 150px;
 	height: 150px;
 	overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	.our-team {
+		&__arrright {
+			margin-right: 32px;
+		}
+		&__arrleft {
+			margin-left: 32px;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.our-team {
+		&__arrright {
+			margin-right: 0;
+		}
+		&__arrleft {
+			margin-left: 0;
+		}
+	}
 }
