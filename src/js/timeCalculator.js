@@ -1,6 +1,9 @@
 let valueOfTimeCalculator = document.querySelector(
 	'.time-calculator-form__input'
 )
+valueOfTimeCalculator.addEventListener('input', function () {
+	valueOfTimeCalculator.style.color = 'black'
+})
 let resultOfTimeCalculator = document.querySelector('.time-calculator__result')
 document
 	.querySelector('.time-calculator-form__button')
