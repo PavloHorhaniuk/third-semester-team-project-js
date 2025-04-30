@@ -47,6 +47,29 @@
 		height: 100%;
 	}
 
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 6px;
+		margin-top: 24px;
+
+		&-item {
+			> button {
+				width: 18px;
+				height: 3px;
+				background-color: var(--white-gray);
+				border-radius: 3px;
+				transition: 0.3s ease-in-out width;
+
+				&.active {
+					background-color: var(--swiper-active);
+					width: 30px;
+				}
+			}
+		}
+	}
+
 	&__container {
 		display: flex;
 	}
