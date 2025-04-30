@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const ball = document.querySelector(".football__ball");
   const cursor = document.querySelector(".football__cursor");
 
-  const initialPosition = { top: 85, left: 92 };
-  const initialPositionCursor = { top: 99, left: 485 };
-
   container.addEventListener("mousemove", (event) => {
     const rect = container.getBoundingClientRect();
-    const x = event.clientX - rect.left - ball.offsetWidth / 2; // Центр мяча по горизонтали
-    const y = event.clientY - rect.top - ball.offsetHeight / 2; // Центр мяча по вертикали
+    const x = event.clientX - rect.left - ball.offsetWidth / 2;
+    const y = event.clientY - rect.top - ball.offsetHeight / 2;
+
+    ball.classList.remove("reset-position");
+    cursor.classList.remove("reset-position");
 
     ball.style.left = `${x}px`;
     ball.style.top = `${y}px`;
@@ -21,11 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   container.addEventListener("mouseleave", () => {
-    ball.style.left = `${initialPosition.left}px`;
-    ball.style.top = `${initialPosition.top}px`;
+    ball.classList.add("reset-position");
+    cursor.classList.add("reset-position");
 
-    cursor.style.left = `${initialPositionCursor.left}px`;
-    cursor.style.top = `${initialPositionCursor.top}px`;
+    // Убираем стили, чтобы вернуться к исходным значениям из CSS
+    ball.style.left = "";
+    ball.style.top = "";
+    cursor.style.left = "";
+    cursor.style.top = "";
   });
 });
-console.log(addEventListener);
