@@ -37,8 +37,8 @@
 
     @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
       grid-template-columns: repeat(3, 90px);
-      margin: 0 auto;
-      justify-content: center;
+      gap: 30px;
+      row-gap: 25px;
     }
 
     @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -92,6 +92,14 @@
       margin: 30px 0px 0px 30px;
     }
 
+    @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 30px auto 0px;
+      column-gap: 25px;
+    }
+
     @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
       grid-template-columns: 1fr;
     }
@@ -106,7 +114,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -126,7 +134,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -147,7 +155,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -163,12 +171,11 @@
       width: 441px;
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 350px;
-
         justify-self: start;
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -188,7 +195,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -207,7 +214,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -228,7 +235,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -249,7 +256,8 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
+        text-align: center;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -270,7 +278,9 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
+        align-items: center;
+        justify-content: center;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -291,7 +301,7 @@
       }
   
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
       }
   
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
