@@ -129,7 +129,7 @@ buttons.forEach(button => {
 				break
 			case 'sort-alpha':
 				filteredScientists = [...filteredScientists].sort((a, b) =>
-					a.surname > b.surname ? 1 : -1
+					a.name > b.name ? 1 : -1
 				)
 				break
 			case 'surname-c':

@@ -20,16 +20,12 @@
     gap: 59px;
     row-gap: 36px;
     text-align: center;
-    width: 100%;
     max-width: 577px;
     margin: 0 auto;
-    // margin-left: 257px;
-    // margin-right: 256px;
 
 
     @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
       grid-template-columns: repeat(4, 90px);
-      margin: 0 auto;
       justify-content: center;
       gap: 40px;
       row-gap: 30px;
@@ -37,25 +33,19 @@
 
     @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
       grid-template-columns: repeat(3, 90px);
-      margin: 0 auto;
-      justify-content: center;
+      gap: 30px;
+      row-gap: 25px;
     }
 
     @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-      grid-template-columns: repeat(2, 80px);
-      gap: 30px;
-    }
-
-    @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-      grid-template-columns: repeat(1, 100px);
-      gap: 20px;
+      grid-template-columns: repeat(2, 100px);
+      gap: 25px;
+      row-gap: 20px;
+      max-width: max-content;
     }
   }
 
   &__card {
-    // width: 100px;
-    // height: 100px;
-
     word-wrap: break-word;
     overflow-wrap: break-word;
     text-align: center;
@@ -67,22 +57,27 @@
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 100%;
-    min-height: 100px; /* Важливо! Фіксована мінімальна висота */
-    background: #d9d9d9;
+    min-height: 100px; 
+    background: var(--white-gray);
     border-radius: 20px;
+    font-size: 12px;
+
+    @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+      min-height: 55px;
+      max-height: 55px;      
+      max-width: 100px;
+      padding: 5px;
+    }
   }
 
   &__buttons {
     display: grid;
-    // grid-template-columns: repeat(2, auto);
     grid-template-columns: max-content max-content;
     column-gap: 36px;
     row-gap: 20px;
     margin-top: 36px;
     margin-left: 147px;
     margin-right: 86px;
-    // margin-left: auto;
-    // margin-right: auto;
     max-width: max-content;
 
     @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
@@ -92,10 +87,17 @@
       margin: 30px 0px 0px 30px;
     }
 
-    @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-      grid-template-columns: 1fr;
+    @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 30px auto 0px;
+      column-gap: 25px;
     }
 
+    @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+
+    }
 
     :nth-child(1) {
       width: 227px;
@@ -104,18 +106,6 @@
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 220px;
       }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
-      }
     }
 
     :nth-child(2) {
@@ -123,18 +113,6 @@
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 250px;
         justify-self: start;
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
       }
     }
 
@@ -145,38 +123,13 @@
         width: 250px;
         
       }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
-      }
     }
 
     :nth-child(4) {
       width: 441px;
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
-        width: 350px;
-
+        width: 357px;
         justify-self: start;
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
       }
     }
 
@@ -186,38 +139,14 @@
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 340px;
       }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
-      }
     }
 
     :nth-child(6) {
       width: 375px;
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 350px;
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
-      }
-      
+        justify-self: start;
+      } 
     }
 
     :nth-child(7) {
@@ -225,18 +154,6 @@
       justify-self: end;
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 300px;
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
       }
     }
 
@@ -246,68 +163,33 @@
       text-align: left;
       @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
         width: 340px;
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
+        justify-self: start;
       }
     }
 
-    :nth-child(9) {
+    :nth-child(9),
+    :nth-child(10) {
       grid-column: 1 / 3;
       justify-self: center;
       width: 489px;
-      @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
-        // width: 200px;
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
-      }
     }
 
-    :nth-child(10){
-      grid-column: 1 / 3;
-      justify-self: center;
-      width: 489px;
-      @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
-        // width: 200px;
-      }
-  
+    :nth-child(n){
       @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-
+        width: 400px;
+        text-align: center;
+        align-items: center;
       }
-  
+
       @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-
-      }
-  
-      @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-
+        width: 100%;
       }
     }
-
   }
 
   &__button {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--secondary);
+    color: map-get($map: $colors, $key: 'primary' );
     height: 35px;
     border: none;
     border-radius: 20px;
@@ -328,33 +210,20 @@
       outline-offset: 2px;
     }
 
-    // @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
-      
-    //   font-size: 13px;
-    //   padding: 10px 20px;
-    //   margin-left: auto;
-    //   margin-right: auto;
-    // }
+    @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+      padding: 8px 16px;
+      height: auto;
+    }
 
-    // @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-    //   font-size: 12px;
-    //   padding: 8px 16px;
-    //   height: auto;
-    // }
-
-    // @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-    //   font-size: 11px;
-    //   padding: 8px 12px;
-    //   width: 100%;
-    //   height: auto;
-    // }
+    @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+      font-size: 11px;
+      padding: 8px 12px;
+    }
   
-    // // SM
-    // @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
-    //   font-size: 10px;
-    //   padding: 6px 10px;
-    //   width: 100%;
-    // }
 
+    @media screen and (max-width: calc(getBreakpoint('sm') - 1px)) {
+      font-size: 10px;
+      padding: 6px 10px;
+    }
   }
 }
