@@ -46,14 +46,7 @@
 			color: var(--dark-gray);
 			box-shadow: 3px 3px 0 0 #00000040;
 			background: var(--gray);
-			appearance: textfield;
-			-webkit-appearance: none;
-			-moz-appearance: textfield;
-			&::-webkit-outer-spin-button,
-			&::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-				margin: 0;
-			}
+			@include noneInputTypeNumScroll;
 		}
 
 		&__button {

@@ -36,6 +36,7 @@ document
 		secondNumOfCalculator.placeholder = 'Введіть число'
 		firstNumOfCalculator.style.fontSize = '12px'
 		secondNumOfCalculator.style.fontSize = '12px'
+		calculatorResult.style.boxShadow = 'none'
 		let isValidNumber = value => {
 			const nonValid = /^-?\d+(\.\d+)?$/
 			return nonValid.test(value)
@@ -69,7 +70,8 @@ document
 			calculatorResult.textContent = operation[currentAction](
 				Number(firstNumOfCalculator.value),
 				Number(secondNumOfCalculator.value),
-				(calculatorResult.style.color = 'black')
+				(calculatorResult.style.color = 'black'),
+				(calculatorResult.style.boxShadow = '3px 3px 0 0 #00000040')
 			)
 		}
 	})
