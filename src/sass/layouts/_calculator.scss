@@ -106,10 +106,17 @@
 			row-gap: 20px;
 		}
 		&__result {
-			width: 135px;
+			min-width: 135px;
+			width: fit-content;
+			text-align: center;
+			max-width: 480px;
 		}
 		&__title {
 			margin-bottom: 30px;
+		}
+		[data-action='='] {
+			transform: rotate(90deg);
+			box-shadow: none;
 		}
 	}
 }

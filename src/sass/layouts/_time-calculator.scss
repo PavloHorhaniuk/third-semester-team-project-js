@@ -64,3 +64,23 @@
 		text-wrap: nowrap;
 	}
 }
+@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+	.time-calculator {
+		&__wrapper {
+			width: 480px;
+			flex-direction: column;
+			row-gap: 45px;
+		}
+		&-form {
+			margin-right: 0px;
+			&::before {
+				margin-left: 0px;
+				top: 160%;
+				width: 150px;
+			}
+		}
+		&__title {
+			margin-bottom: 30px;
+		}
+	}
+}
