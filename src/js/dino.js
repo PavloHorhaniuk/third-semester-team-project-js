@@ -1,5 +1,3 @@
-// Адаптивна версія гри Dino з фіксованими розмірами полотна
-
 import dinoDead from '../images/dino/dino-dead.png'
 import dinoJump from '../images/dino/dino-jump.png'
 import dinoRun1 from '../images/dino/dino-run1.png'
@@ -19,21 +17,16 @@ let context = board.getContext('2d')
 
 let boardWidth, boardHeight, scale
 function setBoardSize() {
-	const w = window.innerWidth
-	if (w >= 1090) {
-		boardWidth = 700
-		boardHeight = 200
-	} else if (w >= 768) {
+	const windowWidth = window.innerWidth
+	if (windowWidth >= 1090) {
 		boardWidth = 600
-		boardHeight = 180
-	} else if (w >= 480) {
-		boardWidth = 380
+		boardHeight = 200
+	} else if (windowWidth >= 480) {
+		boardWidth = 280
 		boardHeight = 140
-	} else {
-		boardWidth = 240
-		boardHeight = 100
 	}
-	scale = boardWidth / 700
+	scale = boardWidth / 600
+
 	board.width = boardWidth
 	board.height = boardHeight
 }

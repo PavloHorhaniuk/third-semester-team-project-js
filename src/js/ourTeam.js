@@ -1,15 +1,33 @@
+import { students } from '../constants/students.js'
+
 const sliderDataName = 'data-slider'
-const slider = document.querySelectorAll(`[${sliderDataName}-item]`)
 const sliderList = document.querySelector(`[${sliderDataName}]`)
 
+sliderList.innerHTML = students
+	.map(student => {
+		return `
+		<li class="our-team__item" data-slider-item>
+			<img
+				class="our-team__image"
+				src="https://images.pexels.com/photos/13599326/pexels-photo-13599326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+				alt="зображення"
+			/>
+			<p class="our-team__name">${student.name}</p>
+			<p class="our-team__work">${student.info}</p>
+		</li>
+	`
+	})
+	.join('')
+
+const slider = document.querySelectorAll(`[${sliderDataName}-item]`)
 const pagination = document.querySelector(`[${sliderDataName}-pagination]`)
 
 const arrowLeft = document.querySelector('.our-team__arrleft')
 const arrowRight = document.querySelector('.our-team__arrright')
 
-const slideWidth = 180
 const paginationBtnElement = `<li class="our-team__pagination-item"><button data-slider-pagination-btn class=""></button></li>`
 
+const slideWidth = 290 + 30
 let currentPosition = 0
 
 for (let i = 0; i < slider.length; i++) {
@@ -27,15 +45,6 @@ paginationBtns.forEach((btn, index) => {
 		updatePagination()
 	})
 })
-
-setInterval(() => {
-	currentPosition++
-	if (currentPosition >= slider.length) {
-		currentPosition = 0
-	}
-	moveSlider()
-	updatePagination()
-}, 10000)
 
 arrowRight.addEventListener('click', () => {
 	currentPosition++
