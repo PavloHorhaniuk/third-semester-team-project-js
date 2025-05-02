@@ -61,10 +61,11 @@
     background: var(--white-gray);
     border-radius: 20px;
     font-size: 12px;
+    color: var(--secondary);
 
     @media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-      min-height: 55px;
-      max-height: 55px;      
+      min-height: 90px;
+      max-height: 90px;      
       max-width: 100px;
       padding: 5px;
     }
@@ -189,7 +190,7 @@
 
   &__button {
     background-color: var(--secondary);
-    color: map-get($map: $colors, $key: 'primary' );
+    color: var(--primary);
     height: 35px;
     border: none;
     border-radius: 20px;
@@ -201,7 +202,7 @@
 
 
     &:hover {
-      background-color: #222;
+      background-color: #a3a1a1;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     }
 
