@@ -1,7 +1,7 @@
 export const students = [
 	{
 		id: 1,
-		name: 'Валера',
+		name: 'Валерій	',
 		info: 'Team lead, робив секції хедер, гугл диназаврика і про нашу команду',
 		avatar: 'placeholder'
 	},
