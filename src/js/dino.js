@@ -18,12 +18,18 @@ let context = board.getContext('2d')
 let boardWidth, boardHeight, scale
 function setBoardSize() {
 	const windowWidth = window.innerWidth
-	if (windowWidth >= 1090) {
+	if (windowWidth > 1090) {
 		boardWidth = 600
 		boardHeight = 200
-	} else if (windowWidth >= 480) {
+	} else if (windowWidth > 768) {
+		boardWidth = 400
+		boardHeight = 150
+	} else if (windowWidth > 480) {
 		boardWidth = 280
 		boardHeight = 140
+	} else {
+		boardWidth = 200
+		boardHeight = 100
 	}
 	scale = boardWidth / 600
 
