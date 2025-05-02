@@ -139,7 +139,7 @@ buttons.forEach(button => {
 				break
 			case 'sort-age':
 				filteredScientists = [...filteredScientists].sort(
-					(a, b) => b.dead - b.born - (a.dead - a.born)
+					(a, b) => a.dead - a.born - (b.dead - b.born)
 				)
 				break
 			case 'remove-a':
@@ -178,4 +178,4 @@ buttons.forEach(button => {
 })
 
 // При завантаженні сторінки все порожнє
-renderScientists([])
+// renderScientists([])
