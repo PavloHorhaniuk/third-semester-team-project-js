@@ -12,8 +12,8 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/third-semester-team-project/assets/index-e1abddcb.js"></script>
-		<link rel="stylesheet" href="/third-semester-team-project/assets/index-e425a960.css">
+		<script type="module" crossorigin src="/third-semester-team-project/assets/index-7ad283a0.js"></script>
+		<link rel="stylesheet" href="/third-semester-team-project/assets/index-ce17659c.css">
 	</head>
 
 	<body class="light">
@@ -81,13 +81,13 @@
 			</button>
 			<strong class='header__modal-title'>
 				Привіт! <br>
-				Ви потрапили на сайт інтерактивних ігор та завдань<br>
-				Надіємось, що вам сподобається і ви отримаєте позитивні емоції! <br>
+				Ви потрапили на сайт інтерактивних ігор та завдань<br class='md-hidden'>
+				Надіємось, що вам сподобається і ви отримаєте позитивні емоції! <br class='md-hidden'>
 				Бажаємо Вам гарно провести час!
 			</strong>
 			<form class="header__modal-form">
-				<label for="header__modal-name" class='header__modal-label'>Введіть своє ім’я:</label>
-				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName'>
+				<label for="headerName" class='header__modal-form--label'>Введіть своє ім’я:</label>
+				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName' id="headerName">
 				<button class='header__modal-form--btn'>Зберегти</button>
 			</form>
 			<div class="header__modal-images">
@@ -250,30 +250,8 @@
 				width="50px"
 				height="100px"
 			/>
-			<div class="our-team__window slider-box">
-				<ul class="our-team__list" data-slider>
-					<li class="our-team__item" data-slider-item>
-						<img
-							class="our-team__image"
-							src="https://images.pexels.com/photos/13599326/pexels-photo-13599326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-							alt="зображення"
-						/>
-					</li>
-					<li class="our-team__item" data-slider-item>
-						<img
-							class="our-team__image"
-							src="https://images.pexels.com/photos/11815778/pexels-photo-11815778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-							alt="зображення"
-						/>
-					</li>
-					<li class="our-team__item" data-slider-item>
-						<img
-							class="our-team__image"
-							src="https://images.pexels.com/photos/6195166/pexels-photo-6195166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-							alt="зображення"
-						/>
-					</li>
-				</ul>
+			<div class="our-team__window slider-box" data-slider-window>
+				<ul class="our-team__list" data-slider></ul>
 			</div>
 			<img
 				class="our-team__arrright"
@@ -283,8 +261,6 @@
 				height="100px"
 			/>
 		</div>
-		<p class="our-team__name">Ім’я студента</p>
-		<p class="our-team__work">Інформація про роботу, яку він/вона виконав/ла</p>
 		<ul class="our-team__pagination" data-slider-pagination></ul>
 	</div>
 </section>
