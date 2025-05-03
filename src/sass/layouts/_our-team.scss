@@ -81,11 +81,16 @@
 				height: 3px;
 				background-color: var(--white-gray);
 				border-radius: 3px;
-				transition: 0.3s ease-in-out width;
+				transition: 0.3s ease-in-out;
+				transition-property: width, height;
 
 				&.active {
 					background-color: var(--swiper-active);
 					width: 30px;
+				}
+
+				&:hover {
+					height: 8px;
 				}
 			}
 		}
@@ -100,7 +105,13 @@
 		position: absolute;
 		top: 25px;
 		right: 92px;
+		cursor: pointer;
 		z-index: 1;
+		transition: 0.3s ease-in-out transform;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
 			right: 32px;
@@ -115,7 +126,13 @@
 		position: absolute;
 		top: 25px;
 		left: 92px;
+		cursor: pointer;
 		z-index: 1;
+		transition: 0.3s ease-in-out transform;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
 			left: 32px;

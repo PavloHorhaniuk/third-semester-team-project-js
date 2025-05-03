@@ -19,12 +19,17 @@
 	&__btn {
 		margin-top: 36px;
 		font-family: getFont('montserrat');
-		background-color: var(--secondary);
-		color: var(--primary);
+		background-color: #000000;
+		color: #ffffff;
 		font-weight: 400;
 		border-radius: 20px;
 		font-size: 12px;
 		padding: 10px 20px;
 		margin-bottom: 36px;
+		transition: 0.3s ease-in-out opacity;
+
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 }
