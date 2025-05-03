@@ -9,8 +9,9 @@ sliderList.innerHTML = students
 		<li class="our-team__item" data-slider-item>
 			<img
 				class="our-team__image"
-				src="https://images.pexels.com/photos/13599326/pexels-photo-13599326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+				src="${student.avatar}"
 				alt="зображення"
+				loading="lazy"
 			/>
 			<p class="our-team__name">${student.name}</p>
 			<p class="our-team__work">${student.info}</p>
