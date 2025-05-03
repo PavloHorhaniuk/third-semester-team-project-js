@@ -55,6 +55,10 @@
 		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
 			position: static;
 		}
+
+		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__list {
