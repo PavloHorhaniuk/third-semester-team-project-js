@@ -1,6 +1,10 @@
+import davidFoto from '../images/students/david_foto.jpg'
 import mykhailoFoto from '../images/students/mykhailo_foto.jpg'
-import user from '../images/students/User-avatar.png'
+import nikitaFoto from '../images/students/nikita_foto.jpg'
+import pavloFoto from '../images/students/pavlo_foto.jpg'
+import timofiiFoto from '../images/students/tymofii_foto.jpg'
 import valeraFoto from '../images/students/valera_foto.jpg'
+import vladFoto from '../images/students/vlad_foto.jpg'
 
 export const students = [
 	{
@@ -19,30 +23,30 @@ export const students = [
 		id: 3,
 		name: 'Владислав',
 		info: 'Developer, робив секції Камінь ножиці папір і нашу команду',
-		avatar: `${user}`
+		avatar: `${vladFoto}`
 	},
 	{
 		id: 4,
 		name: 'Нікіта',
 		info: 'Developer, робив секції калькулятора і калькулятор часу',
-		avatar: `${user}`
+		avatar: `${nikitaFoto}`
 	},
 	{
 		id: 5,
 		name: 'Павло',
 		info: 'Developer, робив секцію вчених',
-		avatar: `${user}`
+		avatar: `${pavloFoto}`
 	},
 	{
 		id: 6,
 		name: 'Давид',
 		info: 'Developer, робив секції високосний рік і найбільше число з 3 чисел',
-		avatar: `${user}`
+		avatar: `${davidFoto}`
 	},
 	{
 		id: 7,
 		name: 'Тимофій',
 		info: 'Developer, робив секцію футбол',
-		avatar: `${user}`
+		avatar: `${timofiiFoto}`
 	}
 ]

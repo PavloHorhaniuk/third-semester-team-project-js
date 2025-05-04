@@ -90,16 +90,14 @@ console.log(`Scientists: ${scientists}`)
 const cards = document.querySelectorAll('.scientist__card')
 const buttons = document.querySelectorAll('.scientist__button')
 
-// Зберігаємо поточний стан вчених
 let filteredScientists = [...scientists]
 
-// Функція для відображення вчених
 function renderScientists(data) {
 	cards.forEach((card, index) => {
 		if (data[index]) {
 			card.textContent = `${data[index].name} ${data[index].surname} (${data[index].born} - ${data[index].dead})`
 		} else {
-			card.textContent = '' // Якщо немає даних - порожнє віконце
+			card.textContent = ''
 		}
 	})
 }
@@ -107,10 +105,9 @@ function renderScientists(data) {
 // Скидання всіх фільтрів
 function resetScientists() {
 	filteredScientists = [...scientists]
-	renderScientists([])
+	renderScientists(filteredScientists)
 }
 
-// Обробка кнопок
 buttons.forEach(button => {
 	button.addEventListener('click', () => {
 		const action = button.dataset.action
@@ -177,5 +174,4 @@ buttons.forEach(button => {
 	})
 })
 
-// При завантаженні сторінки все порожнє
-// renderScientists([])
+renderScientists(scientists)
