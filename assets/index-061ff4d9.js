@@ -4,7 +4,6 @@ if(/\s/.test(t)){d.textContent="Число не може містити проб
 			<img
 				class="our-team__image"
 				src="${e.avatar}"
-				alt="зображення"
 				loading="lazy"
 			/>
 			<p class="our-team__name">${e.name}</p>
