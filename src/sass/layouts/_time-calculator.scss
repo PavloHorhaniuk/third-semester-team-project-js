@@ -82,5 +82,18 @@
 		&__title {
 			margin-bottom: 30px;
 		}
+		&__result {
+			max-width: 479px;
+		}
+	}
+}
+@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+	.time-calculator {
+		&__wrapper {
+			width: 320px;
+		}
+		&__result {
+			max-width: 320px;
+		}
 	}
 }
