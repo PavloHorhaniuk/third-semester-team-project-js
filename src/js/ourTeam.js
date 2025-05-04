@@ -30,6 +30,8 @@ const paginationBtnElement = `<li class="our-team__pagination-item"><button data
 const slideWidth = 290 + 30
 let currentPosition = 0
 
+let autoSlideTimer = null
+
 for (let i = 0; i < slider.length; i++) {
 	pagination.insertAdjacentHTML('beforeend', paginationBtnElement)
 }
@@ -43,6 +45,7 @@ paginationBtns.forEach((btn, index) => {
 		currentPosition = index
 		moveSlider()
 		updatePagination()
+		startAutoSlide()
 	})
 })
 
@@ -53,6 +56,7 @@ arrowRight.addEventListener('click', () => {
 	}
 	moveSlider()
 	updatePagination()
+	startAutoSlide()
 })
 
 arrowLeft.addEventListener('click', () => {
@@ -62,7 +66,20 @@ arrowLeft.addEventListener('click', () => {
 	}
 	moveSlider()
 	updatePagination()
+	startAutoSlide()
 })
+
+function startAutoSlide() {
+	clearInterval(autoSlideTimer)
+	autoSlideTimer = setInterval(() => {
+		currentPosition++
+		if (currentPosition >= slider.length) {
+			currentPosition = 0
+		}
+		moveSlider()
+		updatePagination()
+	}, 10000)
+}
 
 function moveSlider() {
 	slider.forEach(slide => {
@@ -82,3 +99,4 @@ function updatePagination() {
 
 updatePagination()
 moveSlider()
+startAutoSlide()
