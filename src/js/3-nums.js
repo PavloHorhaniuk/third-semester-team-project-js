@@ -6,9 +6,7 @@ function updateMaxValue() {
   if (values.every(val => !isNaN(val))) {
     const max = Math.max(...values);
     resultSpan.textContent = `Найбільше число, яке ви ввели - ${max}`;
-  } else {
-    resultSpan.textContent = 'Найбільше число, яке ви ввели';
-  }
+  } 
 }
 
 inputs.forEach(input => {
