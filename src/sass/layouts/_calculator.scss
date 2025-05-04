@@ -98,6 +98,18 @@
 		background-color: var(--primary);
 	}
 }
+@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
+	.calculator {
+		&__wrapper {
+			width: fit-content;
+			max-width: 768px;
+			column-gap: 20px;
+		}
+		&__title {
+			margin-bottom: 30px;
+		}
+	}
+}
 @media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
 	.calculator {
 		&__wrapper {
@@ -110,9 +122,6 @@
 			width: fit-content;
 			text-align: center;
 			max-width: 480px;
-		}
-		&__title {
-			margin-bottom: 30px;
 		}
 		[data-action='='] {
 			transform: rotate(90deg);

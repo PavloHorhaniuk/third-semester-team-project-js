@@ -9,6 +9,7 @@ document
 	.querySelector('.time-calculator-form__button')
 	.addEventListener('click', function () {
 		valueOfTimeCalculator.style.color = 'black'
+		resultOfTimeCalculator.style.whiteSpace = 'nowrap'
 		let totalMinutes = Number(valueOfTimeCalculator.value.trim())
 		let inputArray = valueOfTimeCalculator.value.trim().split('')
 		if (
@@ -38,5 +39,8 @@ document
 			resultOfTimeCalculator.textContent = `${daysOfConvert} дн. ${
 				hoursOfConvert - daysOfConvert * 24
 			} год. ${totalMinutes - hoursOfConvert * 60} хв`
+		}
+		if (resultOfTimeCalculator.offsetWidth > 400) {
+			resultOfTimeCalculator.style.whiteSpace = 'normal'
 		}
 	})
