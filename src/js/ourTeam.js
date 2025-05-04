@@ -10,7 +10,6 @@ sliderList.innerHTML = students
 			<img
 				class="our-team__image"
 				src="${student.avatar}"
-				alt="зображення"
 				loading="lazy"
 			/>
 			<p class="our-team__name">${student.name}</p>
