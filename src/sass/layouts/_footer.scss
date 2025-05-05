@@ -1,6 +1,6 @@
 .footer {
 	height: 220px;
-	padding: 0px 2px;
+	padding: 0px 5px;
 	margin: auto;
 
 	@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
@@ -10,14 +10,19 @@
 
 	> .container {
 		height: 100%;
+
 		background: #fff;
 		position: relative;
 		background: var(--primary);
+		margin: 0 auto;
 
 		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
 			display: flex;
 			align-items: center;
-			padding: 0px 5px;
+		}
+
+		@media screen and (max-width: getBreakpoint('lg')) {
+			width: 100%;
 		}
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
@@ -30,7 +35,7 @@
 			width: 420px;
 			display: flex;
 			align-items: normal;
-			justify-content: space-between;
+			justify-content: space-around;
 			margin-bottom: 30px;
 		}
 
@@ -78,7 +83,7 @@
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 170%;
-		color: #000;
+		color: var(--secondary);
 	}
 
 	&__form {
@@ -89,14 +94,13 @@
 		position: absolute;
 		top: 97px;
 		bottom: 63px;
-		left: 744px;
+		left: 725px;
 
 		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
 			position: static;
 		}
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-			// margin: 0 auto;
 			margin-bottom: 15px;
 		}
 
@@ -148,7 +152,6 @@
 		font-weight: 400;
 		font-size: 6px;
 		margin-top: 18px;
-		color: #000;
 
 		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
 			margin: 0 auto;
