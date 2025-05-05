@@ -94,4 +94,20 @@
 		left: 485px;
 		transition: left 0.4s ease, top 0.4s ease;
 	}
+
+	&__list {
+		margin-left: 150px;
+		gap: 30px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__cone {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+.cone2, .cone4 {
+	margin-top: 140px;
 }
