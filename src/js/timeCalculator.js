@@ -10,6 +10,7 @@ document
 	.addEventListener('click', function () {
 		valueOfTimeCalculator.style.color = 'black'
 		resultOfTimeCalculator.style.whiteSpace = 'nowrap'
+		resultOfTimeCalculator.style.textAlign = 'none'
 		let totalMinutes = Number(valueOfTimeCalculator.value.trim())
 		let inputArray = valueOfTimeCalculator.value.trim().split('')
 		if (
@@ -40,7 +41,8 @@ document
 				hoursOfConvert - daysOfConvert * 24
 			} год. ${totalMinutes - hoursOfConvert * 60} хв`
 		}
-		if (resultOfTimeCalculator.offsetWidth > 400) {
+		if (resultOfTimeCalculator.offsetWidth > 300) {
 			resultOfTimeCalculator.style.whiteSpace = 'normal'
+			resultOfTimeCalculator.style.textAlign = 'center'
 		}
 	})
