@@ -2,7 +2,6 @@ const backdrop = document.querySelectorAll('[data-modal]')
 const btnOpen = document.querySelectorAll('[data-modal-open]')
 const btnClose = document.querySelectorAll('[data-modal-close]')
 
-// btn.dataset.modalClose
 export function openModal(data) {
 	backdrop.forEach(el => {
 		if (data == el.dataset.modal) {
