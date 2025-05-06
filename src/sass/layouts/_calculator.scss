@@ -77,7 +77,7 @@
 }
 
 .clicked {
-	background-color: var(--primary);
+	background-color: var(--white-gray);
 	color: var(--secondary);
 	animation: pulse 1.5s ease-in-out infinite;
 }
@@ -85,17 +85,17 @@
 @keyframes pulse {
 	0% {
 		transform: scale(1);
-		background-color: var(--primary);
+		background-color: var(--white-gray);
 	}
 
 	50% {
 		transform: scale(1.1);
-		background-color: var(--primary);
+		background-color: var(--white-gray);
 	}
 
 	100% {
 		transform: scale(1);
-		background-color: var(--primary);
+		background-color: var(--white-gray);
 	}
 }
 @media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
@@ -126,6 +126,13 @@
 		[data-action='='] {
 			transform: rotate(90deg);
 			box-shadow: none;
+		}
+	}
+}
+@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+	.calculator {
+		&__wrapper {
+			width: 320px;
 		}
 	}
 }
