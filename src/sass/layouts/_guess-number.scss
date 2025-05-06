@@ -64,6 +64,10 @@
 		background-color: #000;
 	}
 
+	&__button:active > img {
+		transform: scale(0.8);
+	}
+
 	&__text {
 		font-weight: 400;
 		font-size: 12px;

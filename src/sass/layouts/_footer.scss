@@ -147,6 +147,12 @@
 		}
 	}
 
+	&__form-button:active {
+		background-color: var(--primary);
+		color: var(--secondary);
+		transform: scale(0.8);
+	}
+
 	&__form-text {
 		font-family: var(--montserrat);
 		font-weight: 400;
@@ -157,4 +163,14 @@
 			margin: 0 auto;
 		}
 	}
+}
+
+.button-close {
+	transition: 0.3s ease-in-out transform;
+}
+
+.button-close:hover,
+:focus {
+	transform: rotate(360deg);
+	background-color: var(--hover);
 }
