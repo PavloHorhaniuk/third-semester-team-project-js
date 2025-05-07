@@ -28,7 +28,7 @@
 		margin-bottom: 36px;
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-			width: 100%;
+			width: 480px;
 			flex-direction: column;
 		}
 	}
