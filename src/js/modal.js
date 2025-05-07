@@ -57,6 +57,13 @@ document.addEventListener('keydown', e => {
 const form = document.getElementById('emailForm')
 
 form.addEventListener('submit', function (event) {
+	if (
+		document.activeElement.tagName == 'INPUT' ||
+		document.activeElement.tagName == 'TEXTAREA'
+	) {
+		return
+	}
+
 	event.preventDefault()
 
 	if (form.checkValidity()) {
