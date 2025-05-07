@@ -1,4 +1,5 @@
 .football {
+	position: relative;
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -31,8 +32,11 @@
 
 		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
 			width: 290px;
-			// outline: 1px solid yellow;
 		}
+	}
+
+	&__place:hover {
+		cursor: url(../../images/football-cursor.webp), auto;
 	}
 
 	&__ball {
@@ -41,39 +45,12 @@
 		position: absolute;
 		top: 85px;
 		left: 92px;
-		transition: left 0.4s ease, top 0.4s ease;
+		transition: left 0.3s ease, top 0.3s ease;
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-			left: 195px;
+			top: 10px;
+			left: 110px;
 		}
-
-		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-			left: 130px;
-		}
-	}
-
-	&__cursor {
-		position: absolute;
-		top: 99px;
-		left: 485px;
-		width: 11.999999794628748;
-		height: 17.99999969194312;
-
-		@media screen and (max-width: calc(getBreakpoint('xl') - 1px)) {
-			display: none;
-		}
-
-		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-			display: none;
-		}
-
-		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-			display: none;
-		}
-	}
-
-	&__place {
-		cursor: none;
 	}
 
 	&.reset-position {
@@ -81,18 +58,9 @@
 		left: 92px;
 
 		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
-			left: 195px;
+			top: 10px;
+			left: 110px;
 		}
-
-		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
-			left: 130px;
-		}
-	}
-
-	&_cursor.reset-position {
-		top: 99px;
-		left: 485px;
-		transition: left 0.4s ease, top 0.4s ease;
 	}
 
 	&__list {
@@ -100,14 +68,151 @@
 		gap: 30px;
 		display: flex;
 		flex-direction: row;
+
+		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+			margin-top: 100px;
+			margin-left: 20px;
+			flex-direction: column;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+		}
 	}
 
 	&__cone {
-		width: 70px;
-		height: 70px;
+		width: 50px;
+		height: 50px;
+
+		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+			display: none;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+		}
+
+		animation: move-up-down 2s ease-in-out infinite;
+
+		&.cone1 {
+			animation: move-down-up 2s ease-in-out infinite;
+			animation-delay: 0s;
+		}
+
+		&.cone2 {
+			animation-delay: 0.8s;
+		}
+
+		&.cone3 {
+			animation: move-down-up 2s ease-in-out infinite;
+			animation-delay: 1.2s;
+		}
+
+		&.cone4 {
+			animation-delay: 1.8s;
+		}
+
+		&.cone5 {
+			animation: move-down-up 2s ease-in-out infinite;
+			animation-delay: 2.4s;
+		}
+	}
+	&__gate {
+		position: absolute;
+		top: 70px;
+		left: 600px;
+		width: 100px;
+		height: 80px;
+		transform: rotate(90deg);
+	}
+
+	&.paused {
+		animation: none;
+	}
+
+	&__start {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		z-index: 9999999;
+		top: 89px;
+		width: 720px;
+		height: 220px;
+		background-color: rgba(0, 0, 0, 0.3);
+		border: 2px solid #000000;
+		border-radius: 37px;
+
+		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+			width: 450px;
+			height: 600px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+			width: 290px;
+		}
+	}
+
+	&__button-start {
+		font-family: 'Montserrat Alternates';
+		background-color: #000000;
+		color: #ffffff;
+		font-weight: 400;
+		border-radius: 20px;
+		font-size: 12px;
+		padding: 10px 20px;
+		margin-top: 36px;
+	}
+
+	@keyframes move-up-down {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-40px);
+		}
+	}
+
+	@keyframes move-down-up {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(40px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	&__count {
+		position: absolute;
+		z-index: 10;
+		top: 10px;
+		left: 15px;
+		font-size: 14px;
+		font-weight: 400;
+		color: #000000;
+		visibility: hidden;
+		@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+			display: none;
+		}
 	}
 }
 
-.cone2, .cone4 {
-	margin-top: 140px;
+.cone1 {
+	@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+		display: none;
+	}
+}
+
+.cone2,
+.cone4 {
+	margin-top: 170px;
+
+	@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+		margin-top: 0;
+	}
+	@media screen and (max-width: calc(getBreakpoint('md') - 1px)) {
+		margin-top: 0;
+	}
 }
