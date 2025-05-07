@@ -1,65 +1,107 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".football__place");
-  const ball = document.querySelector(".football__ball");
-  const cursor = document.querySelector(".football__cursor");
-  const cones = document.querySelectorAll(".football__cone"); // Все конусы
+document.addEventListener('DOMContentLoaded', () => {
+	const container = document.querySelector('.football__place')
+	const ball = document.querySelector('.football__ball')
+	const cones = document.querySelectorAll('.football__cone')
+	const gate = document.querySelector('.football__gate')
+	const startButton = document.querySelector('.football__button-start')
+	const startOverlay = document.querySelector('.football__start')
+	const countDisplay = document.querySelector('.football__count')
+	const countNumber = document.querySelector('.football__count-number')
 
-  let isFrozen = false; // Флаг для блокировки движения
+	let isBallFrozen = true
+	let targetX = 0
+	let targetY = 0
+	let ballX = 0
+	let ballY = 0
+	let animationFrame
+	let score = 0
+	const resetBallPosition = () => {
+		targetX = 92
+		targetY = 85
+		ballX = targetX
+		ballY = targetY
+		ball.style.left = `${ballX}px`
+		ball.style.top = `${ballY}px`
+	}
 
-  const resetBallPosition = () => {
-    ball.classList.add("reset-position");
-    ball.style.left = "";
-    ball.style.top = "";
-  };
+	const isCollision = (ball, element) => {
+		const ballRect = ball.getBoundingClientRect()
+		const elementRect = element.getBoundingClientRect()
 
-  const isCollision = (ball, cone) => {
-    const ballRect = ball.getBoundingClientRect();
-    const coneRect = cone.getBoundingClientRect();
+		return !(
+			ballRect.right < elementRect.left ||
+			ballRect.left > elementRect.right ||
+			ballRect.bottom < elementRect.top ||
+			ballRect.top > elementRect.bottom
+		)
+	}
 
-    return !(
-      ballRect.right < coneRect.left ||
-      ballRect.left > coneRect.right ||
-      ballRect.bottom < coneRect.top ||
-      ballRect.top > coneRect.bottom
-    );
-  };
+	const handleCollision = () => {
+		isBallFrozen = true
+		startOverlay.style.display = 'flex'
+		startButton.textContent = 'Перезапустити'
+		resetBallPosition()
+	}
 
-  container.addEventListener("mousemove", (event) => {
-    if (isFrozen) return; // Блокируем движение, если флаг установлен
+	const handleWin = () => {
+		isBallFrozen = true
+		startOverlay.style.display = 'flex'
+		startButton.textContent = 'Ви Виграли!'
+		score += 1
+		countNumber.textContent = score
+		resetBallPosition()
+	}
 
-    const rect = container.getBoundingClientRect();
-    const x = event.clientX - rect.left - ball.offsetWidth / 2;
-    const y = event.clientY - rect.top - ball.offsetHeight / 2;
+	startButton.addEventListener('click', () => {
+		startOverlay.style.display = 'none'
+		isBallFrozen = false
+		startButton.textContent = 'Гра триває'
+		countDisplay.style.visibility = 'visible'
+		resetBallPosition()
+		updateBallPosition()
+	})
 
-    ball.classList.remove("reset-position");
-    cursor.classList.remove("reset-position");
+	const updateBallPosition = () => {
+		ballX += (targetX - ballX) * 0.1
+		ballY += (targetY - ballY) * 0.1
 
-    ball.style.left = `${x}px`;
-    ball.style.top = `${y}px`;
+		ball.style.left = `${ballX}px`
+		ball.style.top = `${ballY}px`
 
-    const cursorX = event.clientX - rect.left;
-    const cursorY = event.clientY - rect.top;
-    cursor.style.left = `${cursorX}px`;
-    cursor.style.top = `${cursorY}px`;
+		cones.forEach(cone => {
+			if (isCollision(ball, cone)) {
+				handleCollision()
+				return
+			}
+		})
 
-    // Проверяем столкновение с каждым конусом
-    for (const cone of cones) {
-      if (isCollision(ball, cone)) {
-        resetBallPosition();
-        isFrozen = true; // Устанавливаем флаг блокировки
-        break; // Прерываем цикл, если обнаружено столкновение
-      }
-    }
-  });
+		if (isCollision(ball, gate)) {
+			handleWin()
+			return
+		}
 
-  container.addEventListener("mouseleave", () => {
-    resetBallPosition();
-    cursor.classList.add("reset-position");
+		if (!isBallFrozen) {
+			animationFrame = requestAnimationFrame(updateBallPosition)
+		}
+	}
 
-    // Убираем стили, чтобы вернуться к исходным значениям из CSS
-    cursor.style.left = "";
-    cursor.style.top = "";
+	container.addEventListener('mousemove', event => {
+		if (isBallFrozen) return
 
-    isFrozen = false; // Снимаем блокировку при выходе из поля
-  });
-});
+		const rect = container.getBoundingClientRect()
+		targetX = event.clientX - rect.left - ball.offsetWidth / 2
+		targetY = event.clientY - rect.top - ball.offsetHeight / 2
+
+		targetX = Math.max(0, Math.min(targetX, rect.width - ball.offsetWidth))
+		targetY = Math.max(0, Math.min(targetY, rect.height - ball.offsetHeight))
+	})
+
+	container.addEventListener('mouseleave', () => {
+		if (!isBallFrozen) {
+			resetBallPosition()
+			isBallFrozen = true
+		}
+	})
+
+	resetBallPosition()
+})

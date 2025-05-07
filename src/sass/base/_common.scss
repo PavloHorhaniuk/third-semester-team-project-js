@@ -1,14 +1,16 @@
 body {
-	font-family: getFont('montserrat');
-	color: var(--secondary);
-	background: var(--primary);
+  font-family: getFont('montserrat');
+  color: var(--secondary);
+  background: var(--primary);
 }
+
 main {
-	background-image: url(../images/background.svg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	min-height: 100vh;
-	min-width: 100vw;
-	background-color: var(--background);
+  background-image: url(../images/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--background);
 }
+
