@@ -1,5 +1,9 @@
 .football {
 	position: relative;
+
+	@media screen and (max-width: calc(getBreakpoint('lg') - 1px)) {
+		display: none;
+	}
 	&__container {
 		display: flex;
 		flex-direction: column;
