@@ -58,6 +58,9 @@
 			position: absolute;
 			right: 0%;
 		}
+		&__button > img:active {
+			transform: scale(0.8);
+		}
 	}
 
 	&__result {
