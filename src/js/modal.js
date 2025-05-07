@@ -53,3 +53,22 @@ document.addEventListener('keydown', e => {
 		closeModal(currentModal)
 	}
 })
+
+const form = document.getElementById('emailForm')
+
+form.addEventListener('submit', function (event) {
+	if (
+		document.activeElement.tagName == 'INPUT' ||
+		document.activeElement.tagName == 'TEXTAREA'
+	) {
+		return
+	}
+
+	event.preventDefault()
+
+	if (form.checkValidity()) {
+		openModal('footer')
+	} else {
+		form.reportValidity()
+	}
+})
